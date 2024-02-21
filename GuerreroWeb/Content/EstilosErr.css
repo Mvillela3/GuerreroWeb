@@ -1,0 +1,525 @@
+@charset "utf-8";
+:root {
+    
+    --verde: rgb(0, 168, 89);
+    --blanco: rgb(255, 255, 255);
+    --azulm: rgb(0, 54, 100);
+    --gris: rgb(128.128.128);
+    --gris2: rgb(223, 223, 223);
+    --negro: rgb(0, 0, 0);
+    --amarillo: rgb(255, 242, 0);
+    --rojo: rgb(237, 28, 36);
+    --verdet: rgb(0, 168, 89, .8);
+    --amarillot: rgb(255, 242, 0, .5);
+    --negrot: rgb(0, 0, 0, .5);
+    --azulmt: rgb(0, 54, 100, .8);
+    --azul: rgb(0, 0, 255);
+    --azult: rgb(0, 0, 255, .8);
+    --naranja: rgb(232, 100, 27);
+    --naranjat: rgb(232, 100, 27, .8);
+
+    /*banner*/
+    --bnrw: 70%;
+    --bnrh: 79vh;
+    --ima1h: 10rem;
+    --ima1w: 20rem;
+    --tab1h: 15rem;
+    --tab1w: 35rem;
+    /*logotipo encabezado*/
+    --logoh1: 25rem;
+    --logow1: 35rem;
+    /*texto del menu*/
+}
+
+/*body {
+    min-height: 100vh;
+    background-color: var(--naranja);
+ 
+}
+
+form {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;*/
+    /*    flex-wrap: wrap; */
+/*}*/
+.contenedor {
+    width: 98%;
+    height: 100%;
+    margin-left: 1%;
+    /*background-color:pink;*/
+
+}
+
+/* ###################### CONTENEDORES Y PROPIEDADES DE CONTENEDORES ######################## */
+.coldiv1 {
+    /*Contenedor para 1 divicion*/
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.coldiv1-1 {
+    /*Contenedor para 1 divicion*/
+    display: flex;
+    width: var(--coldiv1);
+    height: auto;
+}
+
+.coldiv2 {
+    /*Contenedor para 2 diviciones*/
+    display: flex;
+    width: 50%;
+    height: auto;
+}
+
+.coldiv3 {
+    /*Contenedor para 3 diviciones*/
+    display: flex;
+    width: 33%;
+    height: auto;
+}
+
+.coldiv4 {
+    /*Contenedor para 4 diviciones*/
+    display: flex;
+    width: 25%;
+    height: auto;
+}
+
+.coldiv5 {
+    /*Contenedor para 5 diviciones*/
+    display: flex;
+    width: 20%;
+    height: auto;
+    /*background-color: yellow; */
+    /*background-color: blue;*/
+}
+
+.coldiv6 {
+    /*Contenedor para 5 diviciones*/
+    display: flex;
+    width: 16%;
+    height: auto;
+}
+
+.org_col {
+    /*Organiza el contenido del contenedor en Columnas */
+    flex-direction: column;
+}
+
+.org_row {
+    /*Organiza el contenido del contenedor en Filas */
+    flex-direction: row;
+}
+
+.org_row1 {
+    /*Organiza el contenido del contenedor en Filas */
+    flex-direction: var(--alin_row);
+}
+
+.alin_izq {
+    /*alinea el contenido del contenedor a la izquierda */
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.alin_der {
+    /*alinea el contenido del contenedor a la derecha */
+    justify-content: right;
+    align-items: flex-end;
+}
+
+.alin_cen {
+    /*alinea el contenido del contenedor al centro */
+    justify-content: center;
+    align-items: center;
+}
+
+.alin_dis_med {
+    /*alinea el contenido del contenedor uniformemente justificado con los entremos */
+    justify-content: space-between;
+}
+
+.alin_dis_aro {
+    /*alinea el contenido del contenedor uniformemente entre los mismos objetos */
+    justify-content: space-around;
+}
+
+.alin_dis_top {
+    justify-content: flex-start;
+}
+
+.alin_dis_down {
+    justify-content: flex-end;
+}
+
+.mult_lin {
+    flex-wrap: wrap;
+}
+
+.autocompletar {
+    position: relative;
+    display: inline-block;
+}
+
+.campo_top_izq {
+    text-align: left;
+    vertical-align: top;
+}
+
+.campo_top_cen {
+    text-align: center;
+    vertical-align: top;
+}
+
+.campo_top_der {
+    text-align: right;
+    vertical-align: top;
+}
+
+.campo_cen_izq {
+    text-align: left;
+    vertical-align: middle;
+}
+
+.campo_cen_cen {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.campo_cen_der {
+    text-align: right;
+    vertical-align: middle;
+}
+
+.campo_aba_izq {
+    text-align: left;
+    vertical-align: bottom;
+}
+
+.campo_aba_cen {
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.campo_aba_der {
+    text-align: right;
+    vertical-align: bottom;
+}
+
+.imagen401 {
+    background-image: url(../Resources/401.png);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: var(--logoh1) !important;
+    width: var(--logow1) !important;
+    margin: 0 5px 5px 5px;
+    /*background-color:var(--amarillo);*/
+    /*border: 2px solid black;*/
+}
+.imagen403 {
+    background-image: url(../Resources/403.png);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: var(--logoh1) !important;
+    width: var(--logow1) !important;
+    margin: 0 5px 5px 5px;
+    /*background-color:var(--amarillo);*/
+    /*border: 2px solid black;*/
+}
+.imagen404 {
+    background-image: url(../Resources/404.png);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: var(--logoh1) !important;
+    width: var(--logow1) !important;
+    margin: 0 5px 5px 5px;
+    /*background-color:var(--amarillo);*/
+    /*border: 2px solid black;*/
+}
+.imagen405 {
+    background-image: url(../Resources/405.png);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: var(--logoh1) !important;
+    width: var(--logow1) !important;
+    margin: 0 5px 5px 5px;
+    /*background-color:var(--amarillo);*/
+    /*border: 2px solid black;*/
+}
+.imagen406 {
+    background-image: url(../Resources/406.png);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: var(--logoh1) !important;
+    width: var(--logow1) !important;
+    margin: 0 5px 5px 5px;
+    /*background-color:var(--amarillo);*/
+    /*border: 2px solid black;*/
+}
+.imagen412 {
+    background-image: url(../Resources/412.png);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: var(--logoh1) !important;
+    width: var(--logow1) !important;
+    margin: 0 5px 5px 5px;
+    /*background-color:var(--amarillo);*/
+    /*border: 2px solid black;*/
+}
+.imagen431 {
+    background-image: url(../Resources/431.png);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: var(--logoh1) !important;
+    width: var(--logow1) !important;
+    margin: 0 5px 5px 5px;
+    /*background-color:var(--amarillo);*/
+    /*border: 2px solid black;*/
+}
+.imagen500 {
+    background-image: url(../Resources/500.png);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: var(--logoh1) !important;
+    width: var(--logow1) !important;
+    margin: 0 5px 5px 5px;
+    /*background-color:var(--amarillo);*/
+    /*border: 2px solid black;*/
+}
+.imagen501 {
+    background-image: url(../Resources/501.png);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: var(--logoh1) !important;
+    width: var(--logow1) !important;
+    margin: 0 5px 5px 5px;
+    /*background-color:var(--amarillo);*/
+    /*border: 2px solid black;*/
+}
+.imagen502 {
+    background-image: url(../Resources/502.png);
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: var(--logoh1) !important;
+    width: var(--logow1) !important;
+    margin: 0 5px 5px 5px;
+    /*background-color:var(--amarillo);*/
+    /*border: 2px solid black;*/
+}
+.imagenconst {
+    background-image: url(../Resources/Constuccion.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: var(--logoh1) !important;
+    width: var(--logow1) !important;
+    margin: 0 5px 5px 5px;
+    /*background-color:var(--amarillo);*/
+    /*border: 2px solid black;*/
+}
+
+.btnback {
+    background-image: url(../Resources/Back.png);
+    border: 2px;
+    border-style: solid;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: white;
+    height: 7rem;
+    width: 8rem;
+    margin: 0 5px 5px 5px;
+}
+
+.FondoMsg {
+    background-image: url(../Resources/FondoGro3.jpg);
+    border: 2px;
+    border-style: solid;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: white;
+    height: 7rem;
+    width: 8rem;
+    margin: 0 5px 5px 5px;
+}
+
+.btnnuevo {
+    background-image: url(../Resources/nuevo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 60px;
+    width: 60px;
+}
+.ImgMdl {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px
+}
+.FndContMdl {
+    background-color:grey;
+    opacity:  0.4;
+}
+.FndMenu {
+    background-color: grey;
+  /*  opacity: 0.4;*/
+}
+
+.VtnMsg {
+    
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+.Activo {
+    background-color: orange;
+    color: black;
+    padding: 2px;
+    height: 20px;
+    width: 100px;
+    border-radius: 8px;
+}
+    .Activo:hover {
+        border: 1px solid black;
+        cursor: pointer;
+        /*padding: 3px;*/
+    }
+
+.inActivo {
+    background-color: yellow;
+    color: black;
+    padding: 2px;
+    height: 20px;
+    width: 100px;
+    border-radius: 8px ;
+}
+    .inActivo:hover {
+        border-radius: 8px;
+        /*padding: 3px;*/
+        border: 1px solid black;
+        cursor: pointer;
+    }
+
+.Tabjax TabPanel HeaderTemplate {
+    height: 30px;
+}
+/*.scroll {
+    margin: 4px, 4px;
+    padding: 4px;
+    background-color: #08c708;
+    width: 300px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+.container {
+    width: 30em;
+    overflow-x: auto;
+    white-space: nowrap;
+}*/
+/*.ventana {
+    background-color: aqua;
+    width: 300px;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+}
+
+.modal {
+    background-color: rgba(0,0,0,.8);
+    position: fixed;
+    top: -250px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s;
+}
+
+#IrVentanaFlotante:target {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.opcion {*/ /*width: 100px;
+        background-color:yellow;
+border:1px solid black;*/
+/*}*/
+
+/*.dropdown-menu > li*/ /* Para evitar la selección de texto */ /*{
+    position: relative;
+    -webkit-user-select: none;*/ /* Chrome/Safari */
+    /*-moz-user-select: none;*/ /* Firefox */
+    /*-ms-user-select: none;*/ /* IE10+ */
+    /* Las reglas a continuación no están implementadas en los navegadores todavía */
+    /*-o-user-select: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.dropdown-menu .sub-menu {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+    margin-top: -1px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left-color: #fff;
+    box-shadow: none;
+}
+
+.right-caret:after, .left-caret:after {
+    content: "";
+    border-bottom: 5px solid transparent;
+    border-top: 5px solid transparent;
+    display: inline-block;
+    height: 0;
+    vertical-align: middle;
+    width: 0;
+    margin-left: 5px;
+}
+
+.right-caret:after {
+    border-left: 5px solid #ffaf46;
+}
+
+.left-caret:after {
+    border-right: 5px solid #ffaf46;
+}*/
+
+/*.dropdown-menu li {
+    position: relative;
+}
+
+.dropdown-menu .dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -7px;
+}
+
+.dropdown-menu .dropdown-submenu-left {
+    right: 100%;
+    left: auto;
+}
+
+.dropdown-menu > li:hover > .dropdown-submenu {
+    display: block;
+}*/
+.TvPerfil img {
+    width: 30px;
+    height: 30px;
+    float: right;
+}

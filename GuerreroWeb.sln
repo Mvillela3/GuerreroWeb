@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuerreroWeb", "GuerreroWeb\GuerreroWeb.csproj", "{D3181B01-EABD-4335-8EDD-685353C56A3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		PRUEBAS|Any CPU = PRUEBAS|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3181B01-EABD-4335-8EDD-685353C56A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3181B01-EABD-4335-8EDD-685353C56A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3181B01-EABD-4335-8EDD-685353C56A3F}.PRUEBAS|Any CPU.ActiveCfg = PRUEBAS|Any CPU
+		{D3181B01-EABD-4335-8EDD-685353C56A3F}.PRUEBAS|Any CPU.Build.0 = PRUEBAS|Any CPU
+		{D3181B01-EABD-4335-8EDD-685353C56A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3181B01-EABD-4335-8EDD-685353C56A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B40B7E2E-7335-4F19-BC5C-BA0EBA5008FE}
+	EndGlobalSection
+EndGlobal
