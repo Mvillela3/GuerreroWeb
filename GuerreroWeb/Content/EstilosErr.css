@@ -523,3 +523,10 @@ border:1px solid black;*/
     height: 30px;
     float: right;
 }
+.TvPerfil input[type="checkbox"] {
+    width: 28px;
+    height: 28px;
+    /*float: right;*/
+    background-color:white;
+    color:green;
+}

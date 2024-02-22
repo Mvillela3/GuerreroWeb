@@ -498,11 +498,7 @@ namespace GuerreroWeb.Views
 
 			if (lista != null)
 			{
-				//if(lista.Count > 0)
-				//{
-				//	TvPerfil.DataSource = lista;
-				//	TvPerfil.DataBind();
-				//}
+
 				if(lista.Count > 0)
 				{
 					for (int i = 0; i < lista.Count; i++)
@@ -518,18 +514,19 @@ namespace GuerreroWeb.Views
 
 						if (lista[i].IdNodoPadre == "00.00.00")
 						{
-							System.Web.UI.WebControls.TreeNode nodo = new System.Web.UI.WebControls.TreeNode(lista[i].IdNodo);
+							TreeNode nodo = new TreeNode(lista[i].IdNodo);
 
 							nodo.Text = lista[i].Descripcion;
 							nodo.ImageUrl = icono;
 							nodo.Value = lista[i].IdNodo;
-							//TvPerfil.Nodes.Add(new TreeNode(lista[i].Descripcion, lista[i].IdNodo, icono));
+							nodo.SelectAction = TreeNodeSelectAction.Expand;
+							nodo.NavigateUrl = null;
+							nodo.Collapse();
 
 							TvPerfil.Nodes.Add(nodo);
 							Nonodo1++;
 							idnodo1 = lista[i].IdNodo;
 							Nonodo2 = -1;
-							TvPerfil.Nodes[Nonodo1].Collapse();
 
 						}
 						else
@@ -539,27 +536,29 @@ namespace GuerreroWeb.Views
 							nodo.Text = lista[i].Descripcion;
 							nodo.ImageUrl = icono;
 							nodo.Value = lista[i].IdNodo;
+							nodo.SelectAction = TreeNodeSelectAction.Expand;
+							nodo.NavigateUrl = null;
+							nodo.Collapse();
 
 							if (idnodo1 == lista[i].IdNodoPadre)
 							{
 								TvPerfil.Nodes[Nonodo1].ChildNodes.Add(nodo);
-								//idnodo2 = lista[i].IdNodo;
 								Nonodo2++;
-								//Nonodo2 = -1;
-								//TvPerfil.Nodes[Nonodo1].ChildN
 
 							}
 							else
 							{
-								System.Web.UI.WebControls.TreeNode nodo2 = new System.Web.UI.WebControls.TreeNode(lista[i].IdNodo);
+								TreeNode nodo2 = new TreeNode(lista[i].IdNodo);
 
 								nodo2.Text = lista[i].Descripcion;
 								nodo2.ImageUrl = icono;
 								nodo2.Value = lista[i].IdNodo;
+								nodo2.SelectAction = TreeNodeSelectAction.Expand;
+								nodo2.NavigateUrl = null;
+								nodo2.Collapse();
 
 								if (idnodo2 != lista[i].IdNodoPadre)
 								{
-									//Nonodo2++;
 									if (Nonodo2 < 0)
 									{
 										Nonodo2 = 0;
@@ -568,7 +567,6 @@ namespace GuerreroWeb.Views
 									idnodo2 = lista[i].IdNodoPadre;
 									//Response.Write("Nonodo2:" + Nonodo2.ToString() + " - IdNodo2: " + idnodo2 + " - NodoPadre: " + lista[i].IdNodoPadre + " - nodo: "  + lista[i].IdNodo.Substring(6,2) + "<br/>");
 									TvPerfil.Nodes[Nonodo1].ChildNodes[Nonodo2].ChildNodes.Add(nodo2);
-									TvPerfil.Nodes[Nonodo1].ChildNodes[Nonodo2].Collapse();
 
 								}
 								else
@@ -587,19 +585,6 @@ namespace GuerreroWeb.Views
 					}
 				}
 			}
-
-			//TvPerfil.Nodes[0].ChildNodes.Add(new TreeNode("Mango", "1", "~/Resources/Check1.png"));
-			//TvPerfil.Nodes[0].ChildNodes.Add(new TreeNode("Apple", "2"));
-			//TvPerfil.Nodes[0].ChildNodes.Add(new TreeNode("Pineapple", "3"));
-			//TvPerfil.Nodes[0].ChildNodes.Add(new TreeNode("Orange", "4"));
-			//TvPerfil.Nodes[0].ChildNodes.Add(new TreeNode("Grapes", "5"));
-
-			//TvPerfil.Nodes.Add(new TreeNode("Vegetables", "10"));
-			//TvPerfil.Nodes[1].ChildNodes.Add(new TreeNode("Carrot", "11"));
-			//TvPerfil.Nodes[1].ChildNodes.Add(new TreeNode("Cauliflower", "12"));
-			//TvPerfil.Nodes[1].ChildNodes.Add(new TreeNode("Potato", "13"));
-			//TvPerfil.Nodes[1].ChildNodes.Add(new TreeNode("Tomato", "14"));
-			//TvPerfil.Nodes[1].ChildNodes.Add(new TreeNode("Onion", "15"));
 		}
 		protected void DdlPerfil_SelectedIndexChanged(object sender, EventArgs e)
 		{
