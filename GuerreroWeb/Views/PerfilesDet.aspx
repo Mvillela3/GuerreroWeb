@@ -9,7 +9,7 @@
 			if (objeto == "MainContent_TxtPerfil") {
 				largo = document.getElementById(objeto).value;
 
-				document.getElementById("MainContent_LblAvisoPer").innerHTML = "Este Campo es Obligatorio1";
+				document.getElementById("MainContent_LblAvisoPer").innerHTML = "Este Campo es Obligatorio";
 				if (largo.length == 0) {
 					document.getElementById("MainContent_LblAvisoPer").style.display = "";
 					//alert("si");
@@ -58,7 +58,7 @@
 				</td>
 				<td colspan="2" class="campo_cen_izq" style="padding: 5px 0 5px 0;">
 					<div class="coldiv1">
-						<asp:TextBox ID="TxtPerfil" runat="server" MaxLength="50" onblur="avisos1(this.id);" CssClass="coldiv1" OnTextChanged="TxtPerfil_TextChanged" ViewStateMode="Enabled" width="100%"></asp:TextBox>
+						<asp:TextBox ID="TxtPerfil" runat="server" MaxLength="50" onblur="avisos1(this.id);" CssClass="coldiv1" onfocus="this.select()" OnTextChanged="TxtPerfil_TextChanged" ViewStateMode="Enabled" width="100%"></asp:TextBox>
 					</div>
 					<div class="coldiv1">
 						<asp:Label ID="LblAvisoPer" runat="server" onclick="avisos1(this.id);" Text="" ForeColor="#FF3300" Font-Size="Small" Font-Bold="True" Style="display: none;"></asp:Label>
@@ -77,10 +77,13 @@
 				<td colspan="5" style="padding: 5px 0 5px 0;" class="org_col campo_top_izq">
 					<div style="overflow-x: hidden; overflow-y: scroll; width: 100%; height: 100%;">
 							<div class="campo_top_izq" style="width: 100%; height: 490px">
-								<asp:TreeView ID="TvPerfil" runat="server" CssClass="TvPerfil" Font-Bold="True" Font-Size="Medium" ShowLines="True" width="100%" BackColor="White">
-								<HoverNodeStyle Font-Bold="True" Height="20px" Width="20px" />
-								<LeafNodeStyle Height="20px" Width="20px" />
-								<RootNodeStyle Font-Bold="True" Height="20px" Width="20px" />
+								<asp:TreeView ID="TvPerfil" runat="server" CssClass="TvPerfil" Font-Bold="True" Font-Size="Medium" ShowLines="True" Width="100%" BackColor="White" ShowCheckBoxes="All" LineImagesFolder="~/TreeLineImages" NodeWrap="True">
+								<HoverNodeStyle Font-Bold="True" Width="100%"  />
+								<LeafNodeStyle ChildNodesPadding="5px" Width="100%"  />
+									<NodeStyle BorderColor="Black" BorderStyle="Solid" ForeColor="Black" HorizontalPadding="20px" Width="100%" ChildNodesPadding="5px" />
+									<ParentNodeStyle ChildNodesPadding="5px" Width="100%" />
+								<RootNodeStyle Font-Bold="True" ChildNodesPadding="5px" Font-Overline="False" HorizontalPadding="10px" Width="100%"  />
+									<SelectedNodeStyle Width="100%" />
 							</asp:TreeView>
 						</div>
 					</div>

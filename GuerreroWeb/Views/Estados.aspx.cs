@@ -167,6 +167,8 @@ namespace GuerreroWeb.Views
             TxtAbrevia.Text = "";
             ChkDefault.Checked = false;
             DdlPais.SelectedIndex = 0;
+            TxtEstado.Focus();
+
             VtMdl.Visible = true;
             MpeVtMdl.Show();
 
@@ -247,6 +249,8 @@ namespace GuerreroWeb.Views
                     TxtAbrevia.Text = respuesta.Abreviatura;
                     ChkDefault.Checked = respuesta.EsDefault;
                     DdlPais.SelectedValue = respuesta.IdPais.ToString();
+                    TxtEstado.Focus();
+
                     VtMdl.Visible = true;
                     MpeVtMdl.Show();
                 }
@@ -378,5 +382,10 @@ namespace GuerreroWeb.Views
             MpeVtMdl.Show();
 
         }
-    }
+
+		protected void DdlPaisB_SelectedIndexChanged(object sender, EventArgs e)
+		{
+            LlenaTabla();
+		}
+	}
 }

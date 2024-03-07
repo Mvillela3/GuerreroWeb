@@ -91,7 +91,7 @@
                 <asp:Label ID="Label11" runat="server" Text="CP:" Font-Bold="True"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="TxtCP" runat="server" MaxLength="5" OnTextChanged="TxtCP_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="TxtCP" runat="server" MaxLength="5" onfocus="this.select()" OnTextChanged="TxtCP_TextChanged"></asp:TextBox>
             </td>
             <td><br /></td>
             <td><br /></td>
@@ -101,19 +101,19 @@
                 <asp:Label ID="Label4" runat="server" Text="Dirección:" Font-Bold="True"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="TxtDir" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TxtDir" runat="server" onfocus="this.select()"></asp:TextBox>
             </td>
             <td>
                 <asp:Label ID="Label5" runat="server" Text="No. Ext.:" Font-Bold="True"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="TxtNoExt" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TxtNoExt" runat="server" onfocus="this.select()"></asp:TextBox>
             </td>
             <td>
                 <asp:Label ID="Label6" runat="server" Text="No. Int" Font-Bold="True"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="TxtNoInt" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TxtNoInt" runat="server" onfocus="this.select()"></asp:TextBox>
             </td>
         </tr>
         <tr>
@@ -121,13 +121,13 @@
                 <asp:Label ID="Label12" runat="server" Text="Telefono 1;" Font-Bold="True"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="TxtTel1" runat="server" MaxLength="15"></asp:TextBox>
+                <asp:TextBox ID="TxtTel1" runat="server" MaxLength="15" onfocus="this.select()"></asp:TextBox>
             </td>
             <td>
                 <asp:Label ID="Label13" runat="server" Text="Telefono 2;" Font-Bold="True"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="TxtTel2" runat="server" MaxLength="15"></asp:TextBox>
+                <asp:TextBox ID="TxtTel2" runat="server" MaxLength="15" onfocus="this.select()"></asp:TextBox>
             </td>
             <td><br /></td>
             <td><br /></td>
@@ -137,13 +137,13 @@
                 <asp:Label ID="Label14" runat="server" Text="Email:" Font-Bold="True"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="TxtEmail" runat="server" MaxLength="100" Font-Bold="False"></asp:TextBox>
+                <asp:TextBox ID="TxtEmail" runat="server" MaxLength="100" onfocus="this.select()" Font-Bold="False"></asp:TextBox>
             </td>
             <td>
                 <asp:Label ID="Label15" runat="server" Text="Página Web:" Font-Bold="True"></asp:Label>
             </td>
             <td>
-                <asp:TextBox ID="TxtWeb" runat="server" MaxLength="100"></asp:TextBox>
+                <asp:TextBox ID="TxtWeb" runat="server" MaxLength="100" onfocus="this.select()"></asp:TextBox>
             </td>
             <td><br /></td>
             <td><br /></td>

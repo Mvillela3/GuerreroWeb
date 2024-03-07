@@ -1,9 +1,9 @@
 ﻿<%@ Page Title="Catálogo de Estados" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="~/Views/Estados.aspx.cs" Inherits="GuerreroWeb.Views.Estados" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="width:100%;height:75vh;" class="mh-100">
+	<div style="width:100%;height:75vh;" class="mh-100">
     <table width="100%">
     <tr>
-        <td colspan="4" style="background-color:black;" style="padding: 10px 10px 10px 10px">
+        <td colspan="4" style="background-color:black;padding: 10px 10px 10px 10px">
             <asp:Label ID="LblTitulo" runat="server" Text="Catálogo de Estados" ForeColor="White" Font-Bold="True"></asp:Label>
         </td>
     </tr>
@@ -28,13 +28,13 @@
                 <table>
                     <tr>
                         <td class="w-25 campo_cen_der">
-                            <asp:TextBox ID="TxtBuscar" runat="server" MaxLength="50" CssClass="coldiv1"></asp:TextBox>
+                            <asp:TextBox ID="TxtBuscar" runat="server" onfocus="this.select()" MaxLength="50" CssClass="coldiv1"></asp:TextBox>
                         </td>
                         <td class="campo_cen_der">
                             <asp:Label ID="LblBusca1" runat="server" Text="País:" Font-Bold="True" ></asp:Label>
                         </td>
                         <td class="w-25 campo_cen_cen">
-                            <asp:DropDownList ID="DdlPaisB" runat="server" AutoPostBack="True" width="100%"></asp:DropDownList>
+                            <asp:DropDownList ID="DdlPaisB" runat="server" AutoPostBack="True" width="100%" OnSelectedIndexChanged="DdlPaisB_SelectedIndexChanged" ViewStateMode="Enabled"></asp:DropDownList>
                         </td>
                         <td class="w-25">
                             <asp:ImageButton ID="BtnConslta" runat="server"  ImageUrl="~/Resources/IcoBuscar.png" Height="30px" Width="30px" OnCommand="BtnConslta_Command"/>
@@ -137,7 +137,7 @@
                     <asp:Label ID="Label2" runat="server" Text="Estado:" BorderStyle="None" Font-Size="Medium" style="text-align: justify;padding: 0  10px  0  10px" ViewStateMode="Enabled" Font-Bold="True"></asp:Label> 
                 </td>
                 <td class="campo_cen_izq" colspan="2" style="padding: 2px 10px  2px  10px">
-                    <asp:TextBox ID="TxtEstado" runat="server" width="100%" MaxLength="60" ViewStateMode="Enabled"></asp:TextBox>
+                    <asp:TextBox ID="TxtEstado" runat="server" width="100%" onfocus="this.select()" MaxLength="60" ViewStateMode="Enabled"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -145,7 +145,7 @@
                     <asp:Label ID="Label3" runat="server" Text="Abreviatura:" BorderStyle="None" Font-Size="Medium" style="text-align: justify;padding: 0  10px  0  10px" ViewStateMode="Enabled" Font-Bold="True"></asp:Label> 
                 </td>
                 <td class="campo_cen_izq" colspan="2" style="padding: 2px 10px  2px  10px">
-                    <asp:TextBox ID="TxtAbrevia" runat="server" width="100%" MaxLength="5" ViewStateMode="Enabled"></asp:TextBox>
+                    <asp:TextBox ID="TxtAbrevia" runat="server" width="100%" onfocus="this.select()" MaxLength="5" ViewStateMode="Enabled"></asp:TextBox>
                 </td>
             </tr>
             <tr>

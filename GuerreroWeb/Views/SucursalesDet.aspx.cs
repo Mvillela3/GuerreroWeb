@@ -67,6 +67,7 @@ namespace GuerreroWeb.Views
             {
                 LlenaPaises();
                 LlenaConsulta();
+                TxtSucursal.Focus();
             }
             AccionBtn();
             if (Accion == "U")

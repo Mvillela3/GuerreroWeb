@@ -128,6 +128,8 @@ namespace GuerreroWeb.Views
             TxtPais.Text = "";
             TxtAbrevia.Text = "";
             ChkDefault.Checked = false;
+            TxtPais.Focus();
+
             VtMdl.Visible = true;
             MpeVtMdl.Show();
 
@@ -201,6 +203,8 @@ namespace GuerreroWeb.Views
                     TxtPais.Text = respuesta.Pais;
                     TxtAbrevia.Text = respuesta.Abreviatura;
                     ChkDefault.Checked = respuesta.EsDefault;
+                    TxtPais.Focus();
+
                     VtMdl.Visible = true;
                     MpeVtMdl.Show();
                 }

@@ -3,7 +3,7 @@
     <div style="width:100%;height:75vh;" class="mh-100">
     <table width="100%">
         <tr>
-            <td colspan="4" style="background-color:black;" style="padding: 10px 10px 10px 10px">
+            <td colspan="4" style="background-color:black;padding: 10px 10px 10px 10px">
                 <asp:Label ID="LblTitulo" runat="server" Text="Catálogo de Almacenes" Font-Bold="True" ForeColor="White"></asp:Label>
             </td>
         </tr>
@@ -26,8 +26,8 @@
                 <asp:Panel ID="PnlConsulta" runat="server" DefaultButton="BtnConslta" CssClass="campo_cen_izq org-row">
                     <table>
                         <tr>
-                            <td>
-                                <asp:TextBox ID="TxtBuscar" runat="server" MaxLength="50" CssClass="coldiv1"></asp:TextBox>
+                            <td class="w-25">
+                                <asp:TextBox ID="TxtBuscar" runat="server" onfocus="this.select()" MaxLength="50" CssClass="coldiv1"></asp:TextBox>
                             </td>
                             <td>
                                 <asp:ImageButton ID="BtnConslta" runat="server"  ImageUrl="~/Resources/IcoBuscar.png" Height="30px" Width="30px" OnCommand="BtnConslta_Command"/>

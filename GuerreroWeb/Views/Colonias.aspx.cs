@@ -283,11 +283,13 @@ namespace GuerreroWeb.Views
         protected void DdlPaisB_SelectedIndexChanged(object sender, EventArgs e)
         {
             LlenaEstados2();
+            LlenaTabla();
         }
 
         protected void DdlEstadoB_SelectedIndexChanged(object sender, EventArgs e)
         {
             LlenaCiudades2();
+            LlenaTabla();
         }
 
         protected void BtnNuevo_Command(object sender, CommandEventArgs e)
@@ -300,6 +302,8 @@ namespace GuerreroWeb.Views
             DdlPais.SelectedValue = "0";
             DdlEstado.SelectedValue = "0";
             DdlCiudad.SelectedValue = "0";
+            TxtColonia.Focus();
+
             VtMdl.Visible = true;
             MpeVtMdl.Show();
 
@@ -546,5 +550,9 @@ namespace GuerreroWeb.Views
             MpeVtMdl.Show();
         }
 
-    }
+		protected void DdlCiudadB_SelectedIndexChanged(object sender, EventArgs e)
+		{
+            LlenaTabla();
+		}
+	}
 }

@@ -63,6 +63,7 @@ namespace GuerreroWeb.Views
                 LlenaSucursal();
                 LlenaEncaegado();
                 LlenaConsulta();
+                TxtAlmacen.Focus();
             }
             AccionBtn();
             if (Accion == "U")

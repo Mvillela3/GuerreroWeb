@@ -399,15 +399,41 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="TreeLineImages\dash.gif" />
+    <Content Include="TreeLineImages\dashminus.gif" />
+    <Content Include="TreeLineImages\dashplus.gif" />
+    <Content Include="TreeLineImages\i.gif" />
+    <Content Include="TreeLineImages\l.gif" />
+    <Content Include="TreeLineImages\lminus.gif" />
+    <Content Include="TreeLineImages\lplus.gif" />
+    <Content Include="TreeLineImages\minus.gif" />
+    <Content Include="TreeLineImages\noexpand.gif" />
+    <Content Include="TreeLineImages\plus.gif" />
+    <Content Include="TreeLineImages\r.gif" />
+    <Content Include="TreeLineImages\rminus.gif" />
+    <Content Include="TreeLineImages\rplus.gif" />
+    <Content Include="TreeLineImages\t.gif" />
+    <Content Include="TreeLineImages\tminus.gif" />
+    <Content Include="TreeLineImages\tplus.gif" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Views\Almacenes.aspx" />
     <Content Include="Views\AlmacenesDet.aspx" />
+    <Content Include="Views\Cajas.aspx" />
     <Content Include="Views\Ciudades.aspx" />
     <Content Include="Views\Colonias.aspx" />
+    <Content Include="Views\Configuracion.aspx" />
     <Content Include="Views\Departamentos.aspx" />
     <Content Include="Views\Empresas.aspx" />
     <Content Include="Views\EmpresasDet.aspx" />
     <Content Include="Views\Estados.aspx" />
+    <Content Include="Views\Folios.aspx" />
+    <Content Include="Views\Inventarios\Categorias.aspx" />
+    <Content Include="Views\Inventarios\Colores.aspx" />
+    <Content Include="Views\Inventarios\Familias.aspx" />
+    <Content Include="Views\Inventarios\Lineas.aspx" />
+    <Content Include="Views\Inventarios\Marcas.aspx" />
+    <Content Include="Views\Inventarios\Modelos.aspx" />
+    <Content Include="Views\Movimientos.aspx" />
     <Content Include="Views\Paises.aspx" />
     <Content Include="Views\VstPerfiles.aspx" />
     <Content Include="Views\PerfilesDet.aspx" />
@@ -430,8 +456,11 @@
       <DependentUpon>Construccion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CtrlCodPostal.cs" />
+    <Compile Include="Controllers\CtrlConfig.cs" />
     <Compile Include="Controllers\CtrlEmpresas.cs" />
     <Compile Include="Controllers\CtrlFiscal.cs" />
+    <Compile Include="Controllers\CtrlInvCatalogos.cs" />
+    <Compile Include="Controllers\CtrlModulos.cs" />
     <Compile Include="Controllers\CtrlUsuarios.cs" />
     <Compile Include="Controllers\DBConexion.cs" />
     <Compile Include="Global.asax.cs">
@@ -453,8 +482,11 @@
     </Compile>
     <Compile Include="Models\CatPaises.cs" />
     <Compile Include="Models\ModConexion.cs" />
+    <Compile Include="Models\ModConfig.cs" />
     <Compile Include="Models\ModEmpresas.cs" />
     <Compile Include="Models\ModFiscal.cs" />
+    <Compile Include="Models\ModInventarios.cs" />
+    <Compile Include="Models\ModModulos.cs" />
     <Compile Include="Models\ModMsgBox.cs" />
     <Compile Include="Models\ModUsuarios.cs" />
     <Compile Include="Models\RespuestaSQL.cs" />
@@ -494,6 +526,13 @@
     <Compile Include="Views\AlmacenesDet.aspx.designer.cs">
       <DependentUpon>AlmacenesDet.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Cajas.aspx.cs">
+      <DependentUpon>Cajas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Cajas.aspx.designer.cs">
+      <DependentUpon>Cajas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Ciudades.aspx.cs">
       <DependentUpon>Ciudades.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -507,6 +546,13 @@
     </Compile>
     <Compile Include="Views\Colonias.aspx.designer.cs">
       <DependentUpon>Colonias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Configuracion.aspx.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Configuracion.aspx.designer.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Departamentos.aspx.cs">
       <DependentUpon>Departamentos.aspx</DependentUpon>
@@ -535,6 +581,62 @@
     </Compile>
     <Compile Include="Views\Estados.aspx.designer.cs">
       <DependentUpon>Estados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Folios.aspx.cs">
+      <DependentUpon>Folios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Folios.aspx.designer.cs">
+      <DependentUpon>Folios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventarios\Categorias.aspx.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Inventarios\Categorias.aspx.designer.cs">
+      <DependentUpon>Categorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventarios\Colores.aspx.cs">
+      <DependentUpon>Colores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Inventarios\Colores.aspx.designer.cs">
+      <DependentUpon>Colores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventarios\Familias.aspx.cs">
+      <DependentUpon>Familias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Inventarios\Familias.aspx.designer.cs">
+      <DependentUpon>Familias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventarios\Lineas.aspx.cs">
+      <DependentUpon>Lineas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Inventarios\Lineas.aspx.designer.cs">
+      <DependentUpon>Lineas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventarios\Marcas.aspx.cs">
+      <DependentUpon>Marcas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Inventarios\Marcas.aspx.designer.cs">
+      <DependentUpon>Marcas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventarios\Modelos.aspx.cs">
+      <DependentUpon>Modelos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Inventarios\Modelos.aspx.designer.cs">
+      <DependentUpon>Modelos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Movimientos.aspx.cs">
+      <DependentUpon>Movimientos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Movimientos.aspx.designer.cs">
+      <DependentUpon>Movimientos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Paises.aspx.cs">
       <DependentUpon>Paises.aspx</DependentUpon>
@@ -591,7 +693,6 @@
     <Folder Include="Views\Compras\" />
     <Folder Include="Views\Cxc\" />
     <Folder Include="Views\Cxp\" />
-    <Folder Include="Views\Inventarios\" />
     <Folder Include="Views\Ventas\" />
   </ItemGroup>
   <ItemGroup>

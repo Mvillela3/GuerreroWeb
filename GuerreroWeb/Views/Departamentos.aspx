@@ -3,7 +3,7 @@
     <div style="width:100%;height:75vh;" class="mh-100">
         <table width="100%">
         <tr>
-            <td colspan="4" style="background-color:black;" style="padding: 10px 10px 10px 10px">
+            <td colspan="4" style="background-color:black;padding: 10px 10px 10px 10px">
                 <asp:Label ID="LblTitulo" runat="server" Text="Catálogo de Departamentos" ForeColor="White" Font-Bold="True"></asp:Label>
             </td>
         </tr>
@@ -28,7 +28,7 @@
                     <table>
                         <tr>
                             <td>
-                                <asp:TextBox ID="TxtBuscar" runat="server" MaxLength="50" CssClass="coldiv1"></asp:TextBox>
+                                <asp:TextBox ID="TxtBuscar" runat="server" onfocus="this.select()" MaxLength="50" CssClass="coldiv1"></asp:TextBox>
                             </td>
                             <td>
                                 <asp:ImageButton ID="BtnConslta" runat="server"  ImageUrl="~/Resources/IcoBuscar.png" Height="30px" Width="30px" OnCommand="BtnConslta_Command"/>
@@ -106,7 +106,7 @@
                         <asp:Label ID="lblDepto" runat="server" Text="Departamento:" BorderStyle="None" Font-Size="Medium" style="text-align: justify;padding: 0  10px  0  10px" ViewStateMode="Enabled" Font-Bold="True"></asp:Label> 
                     </td>
                     <td class="campo_cen_izq" colspan="2" style="padding: 2px 10px  2px  10px">
-                        <asp:TextBox ID="TxtDepto" runat="server" width="100%"></asp:TextBox>
+                        <asp:TextBox ID="TxtDepto" runat="server" onfocus="this.select()" width="100%"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>

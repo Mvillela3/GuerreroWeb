@@ -62,19 +62,19 @@
 	</script>
 	<table width="100%">
 		<tr>
-			<td colspan="6" style="background-color: black;padding: 10px 10px 10px 10px">
+			<td colspan="6" style="background-color: black;padding: 10px 10px 10px 10px;">
 				<asp:Label ID="LblTitulo" runat="server" Text="Detalle del Usuario" Font-Bold="True" ForeColor="White"></asp:Label>
 			</td>
 		</tr>
 		<tr style="background-color: orange;">
-			<td class="campo_cen_cen" width="50px" style="padding: 10px 10px 10px 10px">
+			<td class="campo_cen_cen" width="50px" style="padding: 10px 10px 10px 10px;">
 				<asp:ImageButton ID="BtnEditar" runat="server" ImageUrl="~/Resources/Editar2.png" CssClass="btn btnblock bg-light" Height="40px" Enabled="True" ToolTip="Editar" OnCommand="BtnEditar_Command" />
 			</td>
-			<td class="campo_cen_cen" width="50px" style="padding: 10px 10px 10px 10px">
+			<td class="campo_cen_cen" width="50px" style="padding: 10px 10px 10px 10px;">
 				<asp:ImageButton ID="BtnGuardar" runat="server" ImageUrl="~/Resources/Guardar.png" CssClass="btn btnblock bg-light" Height="40px" Enabled="False" ToolTip="Guardar" OnCommand="BtnGuardar_Command" OnClientClick="return confirm('¿Están Correctos los Datos?');" />
 
 			</td>
-			<td class="campo_cen_cen" width="50px" style="padding: 10px 10px 10px 10px">
+			<td class="campo_cen_cen" width="50px" style="padding: 10px 10px 10px 10px;">
 				<asp:ImageButton ID="BtnCancelar" runat="server" ImageUrl="~/Resources/Cancelar.png" CssClass="btn btnblock opcion bg-light" Height="40px" ToolTip="Deshacer" OnCommand="BtnCancelar_Command" />
 			</td>
 			<td class="campo_cen_izq">
@@ -96,7 +96,7 @@
 				</td>
 				<td class="campo_cen_izq" style="padding: 5px 0 5px 0;">
 					<div class="coldiv1">
-						<asp:TextBox ID="TxtUsuario" runat="server" MaxLength="20" onblur="avisos1(this.id);" CssClass="coldiv1" OnTextChanged="TxtUsuario_TextChanged" ViewStateMode="Enabled"></asp:TextBox>
+						<asp:TextBox ID="TxtUsuario" runat="server" MaxLength="20" onblur="avisos1(this.id);" CssClass="coldiv1" onfocus="this.select()" OnTextChanged="TxtUsuario_TextChanged" ViewStateMode="Enabled"></asp:TextBox>
 					</div>
 					<div class="coldiv1">
 						<asp:Label ID="LblAvisoUsu" runat="server" onclick="avisos1(this.id);" Text="" ForeColor="#FF3300" Font-Size="Small" Font-Bold="True" Style="display: none;"></asp:Label>
@@ -107,7 +107,7 @@
 				</td>
 				<td class="campo_cen_izq" colspan="2" style="padding: 5px 0 5px 0;">
 					<div class="coldiv1">
-						<asp:TextBox ID="TxtNombre" runat="server" MaxLength="100" onblur="avisos1(this.id);" CssClass="coldiv1" OnTextChanged="TxtNombre_TextChanged" ViewStateMode="Enabled"></asp:TextBox>
+						<asp:TextBox ID="TxtNombre" runat="server" MaxLength="100" onfocus="this.select()" onblur="avisos1(this.id);" CssClass="coldiv1" OnTextChanged="TxtNombre_TextChanged" ViewStateMode="Enabled"></asp:TextBox>
 					</div>
 					<div class="coldiv1">
 						<asp:Label ID="LblAvisoNom" runat="server" Text="Este Campo es Obligatorio" ForeColor="#FF3300" Font-Size="Small" Font-Bold="True" Style="display: none;"></asp:Label>
@@ -123,7 +123,7 @@
 				</td>
 				<td style="padding: 5px 0 5px 0;" class="org_col">
 					<div class="coldiv1">
-						<asp:TextBox ID="TxtPwd1" runat="server" TextMode="Password" MaxLength="20" onblur="avisos1(this.id);" OnTextChanged="TxtPwd1_TextChanged" ViewStateMode="Enabled"></asp:TextBox>
+						<asp:TextBox ID="TxtPwd1" runat="server" TextMode="Password" MaxLength="20" onblur="avisos1(this.id);" onfocus="this.select()" OnTextChanged="TxtPwd1_TextChanged" ViewStateMode="Enabled"></asp:TextBox>
 					</div>
 					<div class="coldiv1">
 						<asp:Label ID="LblAvisoPwd1" runat="server" Text="Este Campo es Obligatorio" ForeColor="#FF3300" Font-Size="Small" Font-Bold="True" Style="display: none;"></asp:Label>
@@ -134,7 +134,7 @@
 				</td>
 				<td style="padding: 5px 0 5px 0;" class="org_col">
 					<div class="coldiv1">
-						<asp:TextBox ID="TxtPwd2" runat="server" TextMode="Password" MaxLength="20" onblur="avisos1(this.id);" OnTextChanged="TxtPwd2_TextChanged" ViewStateMode="Enabled"></asp:TextBox>
+						<asp:TextBox ID="TxtPwd2" runat="server" TextMode="Password" MaxLength="20" onblur="avisos1(this.id);" onfocus="this.select()" OnTextChanged="TxtPwd2_TextChanged" ViewStateMode="Enabled"></asp:TextBox>
 					</div>
 					<div class="coldiv1">
 						<asp:Label ID="LblAvisoPwd2" runat="server" Text="Los Password no Coinciden" ForeColor="#FF3300" Font-Size="Small" Font-Bold="True" Style="display: none;"></asp:Label>
@@ -153,13 +153,13 @@
 					<asp:Label ID="Label10" runat="server" Text="Telefono:" Font-Bold="True"></asp:Label>
 				</td>
 				<td style="padding: 5px 0 5px 0;">
-					<asp:TextBox ID="TxtTel" runat="server" MaxLength="20" TextMode="Phone" ViewStateMode="Enabled"></asp:TextBox>
+					<asp:TextBox ID="TxtTel" runat="server" onfocus="this.select()" MaxLength="20" TextMode="Phone" ViewStateMode="Enabled"></asp:TextBox>
 				</td>
 				<td style="padding: 5px 0 5px 0;">
 					<asp:Label ID="Label11" runat="server" Text="Email:" Font-Bold="True"></asp:Label>
 				</td>
 				<td style="padding: 5px 0 5px 0;">
-					<asp:TextBox ID="TxtEmail" runat="server" MaxLength="100" AutoPostBack="True" TextMode="Email" ViewStateMode="Enabled"></asp:TextBox>
+					<asp:TextBox ID="TxtEmail" runat="server" onfocus="this.select()" MaxLength="100" AutoPostBack="True" TextMode="Email" ViewStateMode="Enabled"></asp:TextBox>
 				</td>
 				<td style="padding: 5px 0 5px 0;">
 					<asp:Label ID="Label2" runat="server" Text="Estatus:" Font-Bold="True"></asp:Label>

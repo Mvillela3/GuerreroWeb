@@ -1,6 +1,7 @@
 ﻿using GuerreroWeb.Controllers;
 using GuerreroWeb.Models;
 using System;
+using System.IO;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -10,7 +11,12 @@ namespace GuerreroWeb
     {
         CtrlUsuarios Usuarios = new CtrlUsuarios();
         VtUsuarios VUsuario = new VtUsuarios();
-        private ModUsuarios mUsuario = new ModUsuarios();
+        ModConfig mConfig = new ModConfig();
+        CtrlConfig ctrlConfig = new CtrlConfig();
+		string Ruta1 = Path.GetPathRoot(@"\");
+		string Ruta2 = Path.GetPathRoot(@"\") + @"/Construccion.aspx";
+
+		private ModUsuarios mUsuario = new ModUsuarios();
         VtUsuarios usuarioDet = new VtUsuarios();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -25,16 +31,17 @@ namespace GuerreroWeb
 
             if (usuario.Length == 0)
             {
-                Response.Redirect("~/Default.aspx");
+                Response.Redirect(Ruta1 +"/Default.aspx");
             }
             if (!IsPostBack)
             {
+                mConfig = ctrlConfig.Configuracion(1);
                 VUsuario = Usuarios.VtUsuario(usuario);
             }
 
             if (usuarioDet == null)
             {
-                Response.Redirect("~/Default.aspx");
+                Response.Redirect(Ruta1 + "/Default.aspx");
             }
 
             if (usuarioDet.Usuario == "Error")
@@ -42,131 +49,6 @@ namespace GuerreroWeb
                 Response.Redirect("~/Default.aspx");
             }
 
-            //VUsuario.IdUsu = usuarioDet.IdUsu;
-            //VUsuario.Usuario = usuarioDet.Usuario;
-            //VUsuario.Nombre = usuarioDet.Nombre;
-            //VUsuario.PWD = usuarioDet.PWD;
-            //VUsuario.IdPerfil = usuarioDet.IdPerfil;
-            //VUsuario.IdDepto = usuarioDet.IdDepto;
-            //VUsuario.Email = usuarioDet.Email;
-            //VUsuario.Telefono = usuarioDet.Telefono;
-            //VUsuario.Estatus = usuarioDet.Estatus;
-            //VUsuario.Perfil = usuarioDet.Perfil;
-            //VUsuario.EntraCxc = usuarioDet.EntraCxc;
-            //VUsuario.CxcAdd = usuarioDet.CxcAdd;
-            //VUsuario.CxcMod = usuarioDet.CxcMod;
-            //VUsuario.CxcCan = usuarioDet.CxcCan;
-            //VUsuario.CxcDel = usuarioDet.CxcDel;
-            //VUsuario.EntraVentas = usuarioDet.EntraVentas;
-            //VUsuario.VentaAdd = usuarioDet.VentaAdd;
-            //VUsuario.VentaMod = usuarioDet.VentaMod;
-            //VUsuario.VentaCan = usuarioDet.VentaCan;
-            //VUsuario.VentaDel = usuarioDet.VentaDel;
-            //VUsuario.EntraInv = usuarioDet.EntraInv;
-            //VUsuario.InvAdd = usuarioDet.InvAdd;
-            //VUsuario.InvMod = usuarioDet.InvMod;
-            //VUsuario.InvCan = usuarioDet.InvCan;
-            //VUsuario.InvDel = usuarioDet.InvDel;
-            //VUsuario.EntraArticulos = usuarioDet.EntraArticulos;
-            //VUsuario.ArticuloAdd = usuarioDet.ArticuloAdd;
-            //VUsuario.ArticuloMod = usuarioDet.ArticuloMod;
-            //VUsuario.ArticuloDel = usuarioDet.ArticuloDel;
-            //VUsuario.EntraLineas = usuarioDet.EntraLineas;
-            //VUsuario.LineasAdd = usuarioDet.LineasAdd;
-            //VUsuario.LineasMod = usuarioDet.LineasMod;
-            //VUsuario.LineasDel = usuarioDet.LineasDel;
-            //VUsuario.EntraCategoria = usuarioDet.EntraCategoria;
-            //VUsuario.CatAdd = usuarioDet.CatAdd;
-            //VUsuario.CatMod = usuarioDet.CatMod;
-            //VUsuario.CatDel = usuarioDet.CatDel;
-            //VUsuario.EntraMarcas = usuarioDet.EntraMarcas;
-            //VUsuario.MarcasAdd = usuarioDet.MarcasAdd;
-            //VUsuario.MarcasMod = usuarioDet.MarcasMod;
-            //VUsuario.MarcasDel = usuarioDet.MarcasDel;
-            //VUsuario.EntraModelos = usuarioDet.EntraModelos;
-            //VUsuario.ModelosAdd = usuarioDet.ModelosAdd;
-            //VUsuario.ModelosMod = usuarioDet.ModelosMod;
-            //VUsuario.ModelosDel = usuarioDet.ModelosDel;
-            //VUsuario.EntraColores = usuarioDet.EntraColores;
-            //VUsuario.ColoresAdd = usuarioDet.ColoresAdd;
-            //VUsuario.ColoresMod = usuarioDet.ColoresMod;
-            //VUsuario.ColoresDel = usuarioDet.ColoresDel;
-            //VUsuario.EntraUnidad = usuarioDet.EntraUnidad;
-            //VUsuario.UnidadAdd = usuarioDet.UnidadAdd;
-            //VUsuario.UnidadMod = usuarioDet.UnidadMod;
-            //VUsuario.UnidadDel = usuarioDet.UnidadDel;
-            //VUsuario.EntraCompras = usuarioDet.EntraCompras;
-            //VUsuario.CompraAdd = usuarioDet.CompraAdd;
-            //VUsuario.CompraMod = usuarioDet.CompraMod;
-            //VUsuario.CompraCan = usuarioDet.CompraCan;
-            //VUsuario.CompraDel = usuarioDet.CompraDel;
-            //VUsuario.EntraCxp = usuarioDet.EntraCxp;
-            //VUsuario.CxpAdd = usuarioDet.CxpAdd;
-            //VUsuario.CxpMod = usuarioDet.CxpMod;
-            //VUsuario.CxpCan = usuarioDet.CxpCan;
-            //VUsuario.CxpDel = usuarioDet.CxpDel;
-            //VUsuario.EntraReportes = usuarioDet.EntraReportes;
-            //VUsuario.EntraRepCxc = usuarioDet.EntraRepCxc;
-            //VUsuario.EntraRepVen = usuarioDet.EntraRepVen;
-            //VUsuario.EntraRepInv = usuarioDet.EntraRepInv;
-            //VUsuario.EntraRepCom = usuarioDet.EntraRepCom;
-            //VUsuario.EntraRepCxp = usuarioDet.EntraRepCxp;
-            //VUsuario.EntraWati = usuarioDet.EntraWati;
-            //VUsuario.EntraWatiEnv = usuarioDet.EntraWatiEnv;
-            //VUsuario.EntraWatiCons = usuarioDet.EntraWatiCons;
-            //VUsuario.EntraWatiPlan = usuarioDet.EntraWatiPlan;
-            //VUsuario.EntraWatiAuto = usuarioDet.EntraWatiAuto;
-            //VUsuario.WatiAdd = usuarioDet.WatiAdd;
-            //VUsuario.WatiDel = usuarioDet.WatiDel;
-            //VUsuario.WatiMod = usuarioDet.WatiMod;
-            //VUsuario.EntraConfiguraciones = usuarioDet.EntraConfiguraciones;
-            //VUsuario.EntraEmpresa = usuarioDet.EntraEmpresa;
-            //VUsuario.EmpresaMod = usuarioDet.EmpresaMod;
-            //VUsuario.EntraSistema = usuarioDet.EntraSistema;
-            //VUsuario.EntraModulos = usuarioDet.EntraModulos;
-            //VUsuario.ModAdd = usuarioDet.ModAdd;
-            //VUsuario.ModMod = usuarioDet.ModMod;
-            //VUsuario.ModDel = usuarioDet.ModDel;
-            //VUsuario.EntraMovtos = usuarioDet.EntraMovtos;
-            //VUsuario.MovtosAdd = usuarioDet.MovtosAdd;
-            //VUsuario.MovtosMod = usuarioDet.MovtosMod;
-            //VUsuario.MovtosDel = usuarioDet.MovtosDel;
-            //VUsuario.EntraFolios = usuarioDet.EntraFolios;
-            //VUsuario.FolioAdd = usuarioDet.FolioAdd;
-            //VUsuario.FolioMod = usuarioDet.FolioMod;
-            //VUsuario.FolioDel = usuarioDet.FolioDel;
-            //VUsuario.EntraUsuarios = usuarioDet.EntraUsuarios;
-            //VUsuario.UsuarioAdd = usuarioDet.UsuarioAdd;
-            //VUsuario.UsuarioMod = usuarioDet.UsuarioMod;
-            //VUsuario.UsuarioDel = usuarioDet.UsuarioDel;
-            //VUsuario.EntraPerfiles = usuarioDet.EntraPerfiles;
-            //VUsuario.PerfilAdd = usuarioDet.PerfilAdd;
-            //VUsuario.PerfilMod = usuarioDet.PerfilMod;
-            //VUsuario.PerfilDel = usuarioDet.PerfilDel;
-            //VUsuario.EntraSucursales = usuarioDet.EntraSucursales;
-            //VUsuario.SucursalAdd = usuarioDet.SucursalAdd;
-            //VUsuario.SucursalMod = usuarioDet.SucursalMod;
-            //VUsuario.SucursalDel = usuarioDet.SucursalDel;
-            //VUsuario.EntraAlmacenes = usuarioDet.EntraAlmacenes;
-            //VUsuario.AlmacenAdd = usuarioDet.AlmacenAdd;
-            //VUsuario.AlmacenMod = usuarioDet.AlmacenMod;
-            //VUsuario.AlmacenDel = usuarioDet.AlmacenDel;
-            //VUsuario.EntraPaises = usuarioDet.EntraPaises;
-            //VUsuario.PaisAdd = usuarioDet.PaisAdd;
-            //VUsuario.PaisMod = usuarioDet.PaisMod;
-            //VUsuario.PaisDel = usuarioDet.PaisDel;
-            //VUsuario.EntraEstados = usuarioDet.EntraEstados;
-            //VUsuario.EstadoAdd = usuarioDet.EstadoAdd;
-            //VUsuario.EstadoMod = usuarioDet.EstadoMod;
-            //VUsuario.EstadoDel = usuarioDet.EstadoDel;
-            //VUsuario.EntraCiudades = usuarioDet.EntraCiudades;
-            //VUsuario.CiudadAdd = usuarioDet.CiudadAdd;
-            //VUsuario.CiudadMod = usuarioDet.CiudadMod;
-            //VUsuario.CiudadDel = usuarioDet.CiudadDel;
-            //VUsuario.EntraColonias = usuarioDet.EntraColonias;
-            //VUsuario.ColoniaAdd = usuarioDet.ColoniaAdd;
-            //VUsuario.ColoniaMod = usuarioDet.ColoniaMod;
-            //VUsuario.ColoniaDel = usuarioDet.ColoniaDel;
 
             if (!IsPostBack)
             {
@@ -178,46 +60,169 @@ namespace GuerreroWeb
 
         protected void BtnInicio_Command(object sender, CommandEventArgs e)
         {
-            Response.Redirect("~/Inicio.aspx");
+            Response.Redirect(Ruta1 + "/Inicio.aspx");
         }
 
         protected void BtnCerrarS_Command(object sender, CommandEventArgs e)
         {
             Session["Usuario"] = "";
-            Response.Redirect("~/Login.aspx");
+            Response.Redirect(Ruta1+"/Login.aspx");
 
         }
         private void MenuPermiso(VtUsuarios vUsuarios)
         {
-            LbCxc.Visible = vUsuarios.EntraCxc;
-            LbCxcAbonos.Visible = vUsuarios.EntraCxc;
+
+			// modulo CXC
+			LbCxc.Visible = false;
+			LbCxcAbonos.Visible = false;
+			LbCxcCargos.Visible = false;
+
+			// modulo Ventas
+			LbVentas.Visible = false;
+			LbVentasPed.Visible = false;
+			LbVentasVen.Visible = false;
+			LbVentasPed.Visible = false;
+			LbClientes.Visible = false;
+
+			// modulo Inventarios
+			LbInv.Visible = false;
+			LbInvMInv.Visible = false;
+			LbInvArticulos.Visible = false;
+			LbInvLineas.Visible = false;
+			LbInvCat.Visible = false;
+			LbInvFam.Visible = false;
+			LbInvMarcas.Visible = false;
+			LbInvModelos.Visible = false;
+			LbInvCol.Visible = false;
+			LbInvTal.Visible = false;
+			LbInvUni.Visible = false;
+
+			// modulo Compras
+			LbCompras.Visible = false;
+			LbComprasOC.Visible = false;
+			LbComprasCom.Visible = false;
+			LbComprasDev.Visible = false;
+			LbProveedores.Visible = false;
+
+			// modulo CXP
+			LbCxp.Visible = false;
+			LbCxpCargos.Visible = false;
+			LbCxpAbonos.Visible = false;
+
+			// modulo Configuraciones
+			LbConf.Visible = false;
+			LbConfEmpresa.Visible = false;
+			LbConfSist.Visible = false;
+			LbConfMod.Visible = false;
+			LbConfMovtos.Visible = false;
+			LbConfFolios.Visible = false;
+			LbConfUsuarios.Visible = false;
+			LbConfPerfiles.Visible = false;
+			LbConfSuc.Visible = false;
+			LbConfAlm.Visible = false;
+			LbConfDeptos.Visible = false;
+			LbConfPais.Visible = false;
+			LbConfEst.Visible = false;
+			LbConfCiu.Visible = false;
+			LbConfCol.Visible = false;
+			LbCajas.Visible = false;
+
+
+			// modulo contabilidad
+			LbContabilidad.Visible = false;
+			LbDiario.Visible = false;
+			LbIngresos.Visible = false;
+			LbEgreso.Visible = false;
+			LbFPago.Visible = false;
+			LbMPago.Visible = false;
+			LbImpuestos.Visible = false;
+			LbRFiscal.Visible = false;
+
+			// modulo wati
+			LbWati.Visible = false;
+            LbWatiConsulta.Visible = false;
+            LbWatiEnvios.Visible = false;
+            LbWatiPlan.Visible = false;
+			LbAuto.Visible = false;
+
+			// modulo Reportes
+            LbRep.Visible = false;
+			LbRepCxc.Visible = false;
+			LbRepVen.Visible = false;
+			LbRepInv.Visible = false;
+			LbRepCxp.Visible = false;
+			LbRepConta.Visible = false;
+
+
+			// modulo CXC
+			if (vUsuarios.EntraCxc && mConfig.ActivoCXC)
+            {
+				LbCxc.Visible = vUsuarios.EntraCxc;
+			}
+			LbCxcAbonos.Visible = vUsuarios.EntraCxc;
             LbCxcCargos.Visible = vUsuarios.EntraCxc;
-            LbVentas.Visible = vUsuarios.EntraVentas;
-            LbVentasPed.Visible = vUsuarios.EntraVentas;
+
+			// modulo Ventas
+			if (vUsuarios.EntraVentas && mConfig.ActivoVenta)
+            {
+				LbVentas.Visible = vUsuarios.EntraVentas;
+			}
+			LbVentasPed.Visible = vUsuarios.EntraVentas;
             LbVentasVen.Visible = vUsuarios.EntraVentas;
             LbVentasPed.Visible = vUsuarios.EntraVentas;
-            LbInv.Visible = vUsuarios.EntraInv;
-            LbInvArticulos.Visible = vUsuarios.EntraArticulos;
+			LbClientes.Visible = vUsuarios.EntraClientes;
+
+			// modulo Inventarios
+			if (vUsuarios.EntraInv && mConfig.ActivoInv)
+            {
+				LbInv.Visible = vUsuarios.EntraInv;
+			}
+			LbInvMInv.Visible = vUsuarios.EntraMovInv;
+			LbInvArticulos.Visible = vUsuarios.EntraArticulos;
             LbInvLineas.Visible = vUsuarios.EntraLineas;
             LbInvCat.Visible = vUsuarios.EntraCategoria;
-            LbInvMarcas.Visible = vUsuarios.EntraMarcas;
+			LbInvFam.Visible = vUsuarios.EntraFamilias;
+			LbInvMarcas.Visible = vUsuarios.EntraMarcas;
             LbInvModelos.Visible = vUsuarios.EntraModelos;
             LbInvCol.Visible = vUsuarios.EntraColores;
-            LbUnidades.Visible = vUsuarios.EntraUnidad;
-            LbCompras.Visible = vUsuarios.EntraCompras;
-            LbComprasOC.Visible = vUsuarios.EntraCompras;
+			LbInvTal.Visible = vUsuarios.EntraTallas;
+			LbInvUni.Visible = vUsuarios.EntraUnidad;
+
+			// modulo Compras
+			if (vUsuarios.EntraCompras && mConfig.ActivoComp)
+            {
+				LbCompras.Visible = vUsuarios.EntraCompras;
+			}
+			LbComprasOC.Visible = vUsuarios.EntraCompras;
             LbComprasCom.Visible = vUsuarios.EntraCompras;
             LbComprasDev.Visible = vUsuarios.EntraCompras;
-            LbCxp.Visible = vUsuarios.EntraCxp;
-            LbCxpCargos.Visible = vUsuarios.EntraCxp;
+			LbProveedores.Visible = vUsuarios.EntraProv;
+
+			// modulo CXP
+			if (vUsuarios.EntraCxp && mConfig.ActivoCXP)
+            {
+				LbCxp.Visible = vUsuarios.EntraCxp;
+			}
+			LbCxpCargos.Visible = vUsuarios.EntraCxp;
             LbCxpAbonos.Visible = vUsuarios.EntraCxp;
-            LbRep.Visible = vUsuarios.EntraReportes;
-            LbRepCxc.Visible = vUsuarios.EntraRepCxc;
+
+			// modulo Reportes
+			if (vUsuarios.EntraReportes && mConfig.ActivoReporte)
+            {
+				LbRep.Visible = vUsuarios.EntraReportes;
+			}
+			LbRepCxc.Visible = vUsuarios.EntraRepCxc;
             LbRepVen.Visible = vUsuarios.EntraRepVen;
             LbRepInv.Visible = vUsuarios.EntraRepInv;
             LbRepCxp.Visible = vUsuarios.EntraRepCxp;
-            LbConf.Visible = vUsuarios.EntraConfiguraciones;
-            LbConfEmpresa.Visible = vUsuarios.EntraEmpresa;
+			LbRepConta.Visible = vUsuarios.EntraRepConta;
+
+			// modulo Configuracion
+			if (vUsuarios.EntraConfiguraciones)
+			{
+				LbConf.Visible = vUsuarios.EntraConfiguraciones;
+			}
+			LbConfEmpresa.Visible = vUsuarios.EntraEmpresa;
             LbConfSist.Visible = vUsuarios.EntraSistema;
             LbConfMod.Visible = vUsuarios.EntraModulos;
             LbConfMovtos.Visible = vUsuarios.EntraMovtos;
@@ -231,7 +236,303 @@ namespace GuerreroWeb
             LbConfEst.Visible = vUsuarios.EntraEstados;
             LbConfCiu.Visible = vUsuarios.EntraCiudades;
             LbConfCol.Visible = vUsuarios.EntraColonias;
+			LbCajas.Visible = vUsuarios.EntraCajas; ;
 
-        }
-    }
+			// modulo Contabilidad
+			if (vUsuarios.EntraConta && mConfig.ActivoCont)
+            {
+				LbContabilidad.Visible = vUsuarios.EntraConta;
+			}
+            LbDiario.Visible = vUsuarios.EntraConta;
+			LbIngresos.Visible = vUsuarios.EntraConta;
+			LbEgreso.Visible = vUsuarios.EntraConta;
+            LbFPago.Visible = vUsuarios.EntraFormPago;
+            LbMPago.Visible = vUsuarios.EntraMetPago;
+            LbImpuestos.Visible = vUsuarios.EntraImp;
+            LbRFiscal.Visible = vUsuarios.EntraRFiscal;
+
+			// modulo Wati
+			if (vUsuarios.EntraWati && mConfig.ActivoWati)
+            {
+				LbWati.Visible = vUsuarios.EntraWati;
+			}
+			LbWatiConsulta.Visible = vUsuarios.EntraWatiCons;
+			LbWatiEnvios.Visible = vUsuarios.EntraWatiEnv;
+			LbWatiPlan.Visible = vUsuarios.EntraWatiPlan;
+            LbAuto.Visible = vUsuarios.EntraWatiAuto;
+
+		}
+
+		protected void LbCxcCargos_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbCxcAbonos_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbDiario_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbIngresos_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbEgreso_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LBCtaContable_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbFPago_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbMPago_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbImpuestos_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbRFiscal_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbCxpCargos_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbCxpAbonos_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbComprasOC_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbComprasCom_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbComprasDev_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbProveedores_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbInvMInv_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbInvArticulos_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbInvLineas_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Inventarios/Lineas.aspx");
+
+		}
+
+		protected void LbInvCat_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Inventarios/Categorias.aspx");
+
+		}
+
+		protected void LbInvMarcas_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Inventarios/Marcas.aspx");
+		}
+
+		protected void LbInvModelos_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Inventarios/Modelos.aspx");
+		}
+
+		protected void LbInvCol_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Inventarios/Colores.aspx");
+		}
+
+		protected void LbInvTal_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbInvUni_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbVentasPed_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbVentasVen_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbVentasDev_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbClientes_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbWatiEnvios_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbWatiConsulta_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbWatiPlan_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbAuto_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbRepCxc_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbRepVen_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbRepInv_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbRepCom_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbRepCxp_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbRepConta_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta2);
+		}
+
+		protected void LbConfEmpresa_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1+ "/Views/Empresas.aspx");
+		}
+
+		protected void LbConfSist_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Configuracion.aspx");
+		}
+
+		protected void LbConfMovtos_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Movimientos.aspx");
+		}
+
+		protected void LbConfFolios_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Folios.aspx");
+		}
+
+		protected void LbConfUsuarios_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Usuarios.aspx");
+		}
+
+		protected void LbConfPerfiles_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/VstPerfiles.aspx");
+		}
+
+		protected void LbConfSuc_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Sucursales.aspx");
+		}
+
+		protected void LbConfAlm_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Almacenes.aspx");
+		}
+
+		protected void LbConfDeptos_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Departamentos.aspx");
+		}
+
+		protected void LbCajas_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Cajas.aspx");
+		}
+
+		protected void LbConfPais_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Paises.aspx");
+		}
+
+		protected void LbConfEst_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Estados.aspx");
+		}
+
+		protected void LbConfCiu_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Ciudades.aspx");
+		}
+
+		protected void LbConfCol_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Colonias.aspx");
+		}
+
+		protected void LbInvFam_Command(object sender, CommandEventArgs e)
+		{
+			Response.Redirect(Ruta1 + "/Views/Inventarios/Familias.aspx");
+		}
+	}
 }

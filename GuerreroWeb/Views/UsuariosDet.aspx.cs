@@ -83,6 +83,7 @@ namespace GuerreroWeb.Views
 				{
 					LlenaConsulta();
 				}
+				TxtUsuario.Focus();
 				//llenaArbolPerfil();
 			}
 			AccionBtn();

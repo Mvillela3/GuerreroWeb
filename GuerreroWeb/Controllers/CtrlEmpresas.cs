@@ -935,6 +935,251 @@ namespace GuerreroWeb.Controllers
             return VtAlmacenes;
 
         }
+		public List<VtCajas> ListaCajas(string Caja, int IdSuc)
+		{
+			if (Caja == string.Empty)
+			{
+				Caja = "%%%";
+			}
+			else
+			{
+				Caja = "%" + Caja + "%";
+			}
+			var Lista = new List<VtCajas>();
+			var listaParams = new List<SqlParameter>();
 
-    }
+			String sql = "SELECT * ";
+			sql += " FROM dbo.VtCajas ";
+			sql += " where Caja like @Caja and IdSuc like @IdSuc order by Caja";
+
+			listaParams.Clear();
+			listaParams.Add(new SqlParameter("@Caja", Caja));
+			listaParams.Add(new SqlParameter("@IdSuc", IdSuc));
+
+			try
+			{
+				using (var reader = Cmd.Comandos(conexion.AbreConexion(), sql, CommandType.Text, listaParams).ExecuteReader())
+				{
+					while (reader.Read())
+					{
+						var VtCajas = new VtCajas();
+						VtCajas.IdCaja = Convert.ToInt32(reader["IdCaja"].ToString());
+						VtCajas.Caja = reader["Caja"].ToString();
+						VtCajas.NoCaja = reader["NoCaja"].ToString();
+						VtCajas.IdSuc = Convert.ToInt32(reader["IdSuc"].ToString());
+						VtCajas.Sucursal = reader["Sucursal"].ToString();
+						VtCajas.IdDepto = Convert.ToInt32(reader["IdDepto"].ToString());
+						VtCajas.Departamento = reader["Departamento"].ToString();
+						VtCajas.Consecutivo = Convert.ToInt32(reader["Consecutivo"].ToString());
+						VtCajas.Activo = Convert.ToBoolean(reader["Activo"].ToString()); 
+                        
+                        Lista.Add(VtCajas);
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				var VtCajas = new VtCajas();
+				VtCajas.IdCaja = ex.HResult;
+				VtCajas.Caja = "Error";
+				VtCajas.Sucursal = "Error al llenar la Sucursal " + ex.Message.ToString().Replace("'", "-") + ".";
+				Lista.Add(VtCajas);
+			}
+			return Lista;
+
+
+		}
+		public List<VtCajas> DdlCajas(int IdSuc)
+		{
+			var Lista = new List<VtCajas>();
+			var listaParams = new List<SqlParameter>();
+
+			String sql = "SELECT * ";
+			sql += " FROM dbo.VtCajas ";
+			sql += " where IdSuc like @IdSuc order by Caja";
+
+			listaParams.Clear();
+			listaParams.Add(new SqlParameter("@IdSuc", IdSuc));
+
+			try
+			{
+				using (var reader = Cmd.Comandos(conexion.AbreConexion(), sql, CommandType.Text, listaParams).ExecuteReader())
+				{
+					while (reader.Read())
+					{
+						var VtCajas = new VtCajas();
+						VtCajas.IdCaja = Convert.ToInt32(reader["IdCaja"].ToString());
+						VtCajas.Caja = reader["Caja"].ToString();
+						VtCajas.NoCaja = reader["NoCaja"].ToString();
+						VtCajas.IdSuc = Convert.ToInt32(reader["IdSuc"].ToString());
+						VtCajas.Sucursal = reader["Sucursal"].ToString();
+						VtCajas.IdDepto = Convert.ToInt32(reader["IdDepto"].ToString());
+						VtCajas.Departamento = reader["Departamento"].ToString();
+						VtCajas.Consecutivo = Convert.ToInt32(reader["Consecutivo"].ToString());
+						VtCajas.Activo = Convert.ToBoolean(reader["Activo"].ToString());
+
+						Lista.Add(VtCajas);
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				var VtCajas = new VtCajas();
+				VtCajas.IdCaja = ex.HResult;
+				VtCajas.Caja = "Error";
+				VtCajas.Sucursal = "Error al llenar la Sucursal " + ex.Message.ToString().Replace("'", "-") + ".";
+				Lista.Add(VtCajas);
+			}
+			return Lista;
+
+
+		}
+		public RespuestaSQL CajaAdd(CatCajas modCatCajas)
+		{
+			var Respuesta = new RespuestaSQL();
+			var listaParams = new List<SqlParameter>();
+
+			String sql = "dbo.SpCajaAdd";
+
+			listaParams.Clear();
+			listaParams.Add(new SqlParameter("@Caja", modCatCajas.Caja));
+			listaParams.Add(new SqlParameter("@NoCaja", modCatCajas.NoCaja));
+			listaParams.Add(new SqlParameter("@IdSuc", modCatCajas.IdSuc));
+			listaParams.Add(new SqlParameter("@IdDepto", modCatCajas.IdDepto));
+			listaParams.Add(new SqlParameter("@Consecutivo", modCatCajas.Consecutivo));
+			listaParams.Add(new SqlParameter("@Activo", modCatCajas.Activo));
+			try
+			{
+				using (var reader = Cmd.Comandos(conexion.AbreConexion(), sql, CommandType.StoredProcedure, listaParams).ExecuteReader())
+				{
+					while (reader.Read())
+					{
+						Respuesta.Codigo = Convert.ToInt32(reader["Codigo"].ToString());
+						Respuesta.Mensaje = reader["Mensaje"].ToString();
+						Respuesta.ID = Convert.ToInt32(reader["ID"].ToString());
+
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Respuesta.Codigo = ex.HResult;
+				Respuesta.ID = 0;
+				Respuesta.Mensaje = "Error al Guardar la Caja " + ex.Message.ToString().Replace("'", "-") + ".";
+			}
+			return Respuesta;
+
+		}
+		public RespuestaSQL CajaMod(CatCajas modCatCajas)
+		{
+			var Respuesta = new RespuestaSQL();
+			var listaParams = new List<SqlParameter>();
+
+			String sql = "dbo.SpCajaMod";
+
+			listaParams.Clear();
+			listaParams.Add(new SqlParameter("@IdCaja", modCatCajas.IdCaja));
+			listaParams.Add(new SqlParameter("@Caja", modCatCajas.Caja));
+			listaParams.Add(new SqlParameter("@NoCaja", modCatCajas.NoCaja));
+			listaParams.Add(new SqlParameter("@IdSuc", modCatCajas.IdSuc));
+			listaParams.Add(new SqlParameter("@IdDepto", modCatCajas.IdDepto));
+			listaParams.Add(new SqlParameter("@Consecutivo", modCatCajas.Consecutivo));
+			listaParams.Add(new SqlParameter("@Activo", modCatCajas.Activo));
+
+			try
+			{
+				using (var reader = Cmd.Comandos(conexion.AbreConexion(), sql, CommandType.StoredProcedure, listaParams).ExecuteReader())
+				{
+					while (reader.Read())
+					{
+						Respuesta.Codigo = Convert.ToInt32(reader["Codigo"].ToString());
+						Respuesta.Mensaje = reader["Mensaje"].ToString();
+						Respuesta.ID = Convert.ToInt32(reader["ID"].ToString());
+
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Respuesta.Codigo = ex.HResult;
+				Respuesta.ID = 0;
+				Respuesta.Mensaje = "Error al Modificar la Caja " + ex.Message.ToString().Replace("'", "-") + ".";
+			}
+			return Respuesta;
+
+		}
+		public RespuestaSQL CajaDel(int IdCaja)
+		{
+			var Respuesta = new RespuestaSQL();
+			var listaParams = new List<SqlParameter>();
+
+			String sql = "dbo.SpCajaDel";
+
+			listaParams.Clear();
+			listaParams.Add(new SqlParameter("@IdCaja", IdCaja));
+
+			try
+			{
+				using (var reader = Cmd.Comandos(conexion.AbreConexion(), sql, CommandType.StoredProcedure, listaParams).ExecuteReader())
+				{
+					while (reader.Read())
+					{
+						Respuesta.Codigo = Convert.ToInt32(reader["Codigo"].ToString());
+						Respuesta.Mensaje = reader["Mensaje"].ToString();
+						Respuesta.ID = Convert.ToInt32(reader["ID"].ToString());
+
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				Respuesta.Codigo = ex.HResult;
+				Respuesta.ID = 0;
+				Respuesta.Mensaje = "Error al Eliminar la Caja " + ex.Message.ToString().Replace("'", "-") + ".";
+			}
+			return Respuesta;
+
+		}
+		public CatCajas Caja(int IdCaja)
+		{
+			var CatCajas = new CatCajas();
+			var listaParams = new List<SqlParameter>();
+
+			String sql = "SELECT * ";
+			sql += " FROM dbo.CatCajas ";
+			sql += " where IdCaja like @IdCaja order by Caja";
+
+			listaParams.Clear();
+			listaParams.Add(new SqlParameter("@IdCaja", IdCaja));
+
+			try
+			{
+				using (var reader = Cmd.Comandos(conexion.AbreConexion(), sql, CommandType.Text, listaParams).ExecuteReader())
+				{
+					while (reader.Read())
+					{
+						CatCajas.IdCaja = Convert.ToInt32(reader["IdCaja"].ToString());
+						CatCajas.Caja = reader["Caja"].ToString();
+						CatCajas.NoCaja = reader["NoCaja"].ToString();
+						CatCajas.IdSuc = Convert.ToInt32(reader["IdSuc"].ToString());
+						CatCajas.IdDepto = Convert.ToInt32(reader["IdDepto"].ToString());
+						CatCajas.Consecutivo = Convert.ToInt32(reader["Consecutivo"].ToString());
+						CatCajas.Activo = Convert.ToBoolean(reader["Activo"].ToString());
+
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				CatCajas.IdCaja = ex.HResult;
+				//CatCajas.Caja = "Error";
+				CatCajas.Caja = "Error al llenar la Sucursal " + ex.Message.ToString().Replace("'", "-") + ".";
+
+			}
+			return CatCajas;
+
+
+		}
+
+	}
 }

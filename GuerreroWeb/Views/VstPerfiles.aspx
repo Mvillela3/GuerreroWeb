@@ -3,21 +3,21 @@
 	<div style="width: 100%; height: 75vh;" class="mh-100">
 		<table width="100%">
 			<tr>
-				<td colspan="4" style="background-color: black; padding: 10px 10px 10px 10px">
+				<td colspan="4" style="background-color: black; padding: 10px 10px 10px 10px;">
 					<asp:Label ID="LblTitulo" runat="server" Text="Catálogo de Perfiles" ForeColor="White" Font-Bold="True"></asp:Label>
 				</td>
 			</tr>
 			<tr style="background-color: orange;">
-				<td class="campo_cen_cen" width="50px" style="padding: 10px 10px 10px 10px">
+				<td class="campo_cen_cen" width="50px" style="padding: 10px 10px 10px 10px;">
 					<asp:ImageButton ID="BtnNuevo" runat="server" ImageUrl="~/Resources/nuevo.png" CssClass="btn btnblock bg-light" Height="40px" Enabled="True" ViewStateMode="Enabled" OnCommand="BtnNuevo_Command" />
 				</td>
-				<td class="campo_cen_cen" width="50px" style="padding: 10px 10px 10px 10px">
+				<td class="campo_cen_cen" width="50px" style="padding: 10px 10px 10px 10px;">
 					<br />
 				</td>
-				<td class="campo_cen_cen" width="40px" style="padding: 10px 10px 10px 10px">
+				<td class="campo_cen_cen" width="40px" style="padding: 10px 10px 10px 10px;">
 					<br />
 				</td>
-				<td class="campo_cen_izq" style="padding: 10px 10px 10px 10px">
+				<td class="campo_cen_izq" style="padding: 10px 10px 10px 10px;">
 					<asp:ImageButton ID="BtnBuscar" runat="server" ImageUrl="~/Resources/Buscar.png" CssClass="btn btnblock bg-light" Height="40px" OnCommand="BtnBuscar_Command" ViewStateMode="Enabled" />
 				</td>
 			</tr>
@@ -27,7 +27,7 @@
 						<table>
 							<tr>
 								<td class="w-25 campo_cen_der">
-									<asp:TextBox ID="TxtBuscar" runat="server" MaxLength="50" CssClass="coldiv1"></asp:TextBox>
+									<asp:TextBox ID="TxtBuscar" runat="server" onfocus="this.select()" MaxLength="50" CssClass="coldiv1"></asp:TextBox>
 								</td>
 								<td class="campo_cen_cen">
 									<asp:ImageButton ID="BtnConslta" runat="server" ImageUrl="~/Resources/IcoBuscar.png" Height="30px" Width="30px" OnCommand="BtnConslta_Command" />

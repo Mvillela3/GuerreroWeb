@@ -42,7 +42,7 @@ namespace GuerreroWeb.Views
 				Accion = Session["AccPer"].ToString();
 			}
 
-			if (!vtUsuario.EntraUsuarios)
+			if (!vtUsuario.EntraPerfiles)
 			{
 
 				Response.Redirect("~/Views/Inicio.aspx");
@@ -70,6 +70,7 @@ namespace GuerreroWeb.Views
 				{
 					llenaArbolPerfil(IdPer);
 				}
+				TxtPerfil.Focus();
 				//llenaArbolPerfil();
 			}
 			AccionBtn();
@@ -264,7 +265,7 @@ namespace GuerreroWeb.Views
 
 								nodo2.Text = lista[i].Descripcion;
 								nodo2.Value = lista[i].NomCampo;
-								nodo2.SelectAction = TreeNodeSelectAction.Expand;
+								nodo2.SelectAction = TreeNodeSelectAction.None;
 								nodo2.NavigateUrl = null;
 								nodo2.Collapse();
 
@@ -971,6 +972,190 @@ namespace GuerreroWeb.Views
 			if (campo == "ColoniaDel")
 			{
 				mPerfil.ColoniaDel = valor;
+			}
+			if (campo == "EntraConta")
+			{
+				mPerfil.EntraConta = valor;
+			}
+			if (campo == "ContaAdd")
+			{
+				mPerfil.ContaAdd = valor;
+			}
+			if (campo == "ContaMod")
+			{
+				mPerfil.ContaMod = valor;
+			}
+			if (campo == "ContaCan")
+			{
+				mPerfil.ContaCan = valor;
+			}
+			if (campo == "ContaDel")
+			{
+				mPerfil.ContaDel = valor;
+			}
+			if (campo == "EntraCatConta")
+			{
+				mPerfil.EntraCatConta = valor;
+			}
+			if (campo == "CatContaAdd")
+			{
+				mPerfil.CatContaAdd = valor;
+			}
+			if (campo == "CatContaMod")
+			{
+				mPerfil.CatContaMod = valor;
+			}
+			if (campo == "CatContaDel")
+			{
+				mPerfil.CatContaDel = valor;
+			}
+			if (campo == "EntraFormPago")
+			{
+				mPerfil.EntraFormPago = valor;
+			}
+			if (campo == "FPagoAdd")
+			{
+				mPerfil.FPagoAdd = valor;
+			}
+			if (campo == "FPagoMod")
+			{
+				mPerfil.FPagoMod = valor;
+			}
+			if (campo == "FPagoDel")
+			{
+				mPerfil.FPagoDel = valor;
+			}
+			if (campo == "EntraMetPago")
+			{
+				mPerfil.EntraMetPago = valor;
+			}
+			if (campo == "MetPagoAdd")
+			{
+				mPerfil.MetPagoAdd = valor;
+			}
+			if (campo == "MetPagoMod")
+			{
+				mPerfil.MetPagoMod = valor;
+			}
+			if (campo == "MetPagoDel")
+			{
+				mPerfil.MetPagoDel = valor;
+			}
+			if (campo == "EntraImp")
+			{
+				mPerfil.EntraImp = valor;
+			}
+			if (campo == "ImpAdd")
+			{
+				mPerfil.ImpAdd = valor;
+			}
+			if (campo == "ImpMod")
+			{
+				mPerfil.ImpMod = valor;
+			}
+			if (campo == "ImpDel")
+			{
+				mPerfil.ImpDel = valor;
+			}
+			if (campo == "EntraRFiscal")
+			{
+				mPerfil.EntraRFiscal = valor;
+			}
+			if (campo == "RfiscalAdd")
+			{
+				mPerfil.RfiscalAdd = valor;
+			}
+			if (campo == "RfiscalMod")
+			{
+				mPerfil.RfiscalMod = valor;
+			}
+			if (campo == "RfiscalDel")
+			{
+				mPerfil.RfiscalDel = valor;
+			}
+			if (campo == "EntraRepConta")
+			{
+				mPerfil.EntraRepConta = valor;
+			}
+			if (campo == "EntraClientes")
+			{
+				mPerfil.EntraClientes = valor;
+			}
+			if (campo == "CteAdd")
+			{
+				mPerfil.CteAdd = valor;
+			}
+			if (campo == "CteMod")
+			{
+				mPerfil.CteMod = valor;
+			}
+			if (campo == "CteDel")
+			{
+				mPerfil.CteDel = valor;
+			}
+			if (campo == "EntraProv")
+			{
+				mPerfil.EntraProv = valor;
+			}
+			if (campo == "ProvAdd")
+			{
+				mPerfil.ProvAdd = valor;
+			}
+			if (campo == "ProvMod")
+			{
+				mPerfil.ProvMod = valor;
+			}
+			if (campo == "ProvDel")
+			{
+				mPerfil.ProvDel = valor;
+			}
+			if (campo == "EntraCajas")
+			{
+				mPerfil.EntraCajas = valor;
+			}
+			if (campo == "CajaAdd")
+			{
+				mPerfil.CajaAdd = valor;
+			}
+			if (campo == "CajaMod")
+			{
+				mPerfil.CajaMod = valor;
+			}
+			if (campo == "CajaDel")
+			{
+				mPerfil.CajaDel = valor;
+			}
+			if (campo == "EntraTallas")
+			{
+				mPerfil.EntraTallas = valor;
+			}
+			if (campo == "TallaAdd")
+			{
+				mPerfil.TallaAdd = valor;
+			}
+			if (campo == "TallaMod")
+			{
+				mPerfil.TallaMod = valor;
+			}
+			if (campo == "TallaDel")
+			{
+				mPerfil.TallaDel = valor;
+			}
+			if (campo == "EntraFamilias")
+			{
+				mPerfil.EntraFamilias = valor;
+			}
+			if (campo == "FamiliaAdd")
+			{
+				mPerfil.FamiliaAdd = valor;
+			}
+			if (campo == "FamiliaMod")
+			{
+				mPerfil.FamiliaMod = valor;
+			}
+			if (campo == "FamiliaDel")
+			{
+				mPerfil.FamiliaDel = valor;
 			}
 
 		}

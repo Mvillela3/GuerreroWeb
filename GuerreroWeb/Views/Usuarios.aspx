@@ -28,7 +28,7 @@
                 <table>
                     <tr>
                         <td class="w-25 campo_cen_der">
-                            <asp:TextBox ID="TxtBuscar" runat="server" MaxLength="50" CssClass="coldiv1"></asp:TextBox>
+                            <asp:TextBox ID="TxtBuscar" runat="server" onfocus="this.select()" MaxLength="50" CssClass="coldiv1"></asp:TextBox>
                         </td>
                         <td class="campo_cen_der">
                             <asp:Label ID="LblBusca1" runat="server" Text="Perfil:" Font-Bold="True" ></asp:Label>

@@ -112,6 +112,8 @@ namespace GuerreroWeb.Views
             Session["AccDep"] = "N";
             HfId.Value = "0";
             TxtDepto.Text = "";
+            TxtDepto.Focus();
+
             VtMdl.Visible = true;
             MpeVtMdl.Show();
 
@@ -184,6 +186,8 @@ namespace GuerreroWeb.Views
                         return;
                     }
                     TxtDepto.Text = respuesta.Departamento;
+                    TxtDepto.Focus();
+
                     VtMdl.Visible = true;
                     MpeVtMdl.Show();
                 }

@@ -162,6 +162,52 @@ namespace GuerreroWeb.Models
         public bool WatiPlanMod { get; set; }
         public bool WatiPlanDel { get; set; }
 		public bool EntraMovInv { get; set; }
+		public bool EntraConta { get; set; }
+		public bool ContaAdd { get; set; }
+		public bool ContaMod { get; set; }
+		public bool ContaCan { get; set; }
+		public bool ContaDel { get; set; }
+		public bool EntraCatConta { get; set; }
+		public bool CatContaAdd { get; set; }
+		public bool CatContaMod { get; set; }
+		public bool CatContaDel { get; set; }
+		public bool EntraFormPago { get; set; }
+		public bool FPagoAdd { get; set; }
+		public bool FPagoMod { get; set; }
+		public bool FPagoDel { get; set; }
+		public bool EntraMetPago { get; set; }
+		public bool MetPagoAdd { get; set; }
+		public bool MetPagoMod { get; set; }
+		public bool MetPagoDel { get; set; }
+		public bool EntraImp { get; set; }
+		public bool ImpAdd { get; set; }
+		public bool ImpMod { get; set; }
+		public bool ImpDel { get; set; }
+		public bool EntraRFiscal { get; set; }
+		public bool RfiscalAdd { get; set; }
+		public bool RfiscalMod { get; set; }
+		public bool RfiscalDel { get; set; }
+		public bool EntraRepConta { get; set; }
+		public bool EntraClientes { get; set; }
+		public bool CteAdd { get; set; }
+		public bool CteMod { get; set; }
+		public bool CteDel { get; set; }
+		public bool EntraProv { get; set; }
+		public bool ProvAdd { get; set; }
+		public bool ProvMod { get; set; }
+		public bool ProvDel { get; set; }
+		public bool EntraCajas { get; set; }
+		public bool CajaAdd { get; set; }
+		public bool CajaMod { get; set; }
+		public bool CajaDel { get; set; }
+		public bool EntraTallas { get; set; }
+		public bool TallaAdd { get; set; }
+		public bool TallaMod { get; set; }
+		public bool TallaDel { get; set; }
+		public bool EntraFamilias { get; set; }
+		public bool FamiliaAdd { get; set; }
+		public bool FamiliaMod { get; set; }
+		public bool FamiliaDel { get; set; }
 	}
     public class Perfiles
     {
@@ -293,6 +339,52 @@ namespace GuerreroWeb.Models
         public bool WatiPlanMod { get; set; }
         public bool WatiPlanDel { get; set; }
 		public bool EntraMovInv { get; set; }
+		public bool EntraConta { get; set; }
+		public bool ContaAdd { get; set; }
+		public bool ContaMod { get; set; }
+		public bool ContaCan { get; set; }
+		public bool ContaDel { get; set; }
+		public bool EntraCatConta { get; set; }
+		public bool CatContaAdd { get; set; }
+		public bool CatContaMod { get; set; }
+		public bool CatContaDel { get; set; }
+		public bool EntraFormPago { get; set; }
+		public bool FPagoAdd { get; set; }
+		public bool FPagoMod { get; set; }
+		public bool FPagoDel { get; set; }
+		public bool EntraMetPago { get; set; }
+		public bool MetPagoAdd { get; set; }
+		public bool MetPagoMod { get; set; }
+		public bool MetPagoDel { get; set; }
+		public bool EntraImp { get; set; }
+		public bool ImpAdd { get; set; }
+		public bool ImpMod { get; set; }
+		public bool ImpDel { get; set; }
+		public bool EntraRFiscal { get; set; }
+		public bool RfiscalAdd { get; set; }
+		public bool RfiscalMod { get; set; }
+		public bool RfiscalDel { get; set; }
+		public bool EntraRepConta { get; set; }
+		public bool EntraClientes { get; set; }
+		public bool CteAdd { get; set; }
+		public bool CteMod { get; set; }
+		public bool CteDel { get; set; }
+		public bool EntraProv { get; set; }
+		public bool ProvAdd { get; set; }
+		public bool ProvMod { get; set; }
+		public bool ProvDel { get; set; }
+		public bool EntraCajas { get; set; }
+		public bool CajaAdd { get; set; }
+		public bool CajaMod { get; set; }
+		public bool CajaDel { get; set; }
+		public bool EntraTallas { get; set; }
+		public bool TallaAdd { get; set; }
+		public bool TallaMod { get; set; }
+		public bool TallaDel { get; set; }
+		public bool EntraFamilias { get; set; }
+		public bool FamiliaAdd { get; set; }
+		public bool FamiliaMod { get; set; }
+		public bool FamiliaDel { get; set; }
 	}
     public class VtPerfiles
     {

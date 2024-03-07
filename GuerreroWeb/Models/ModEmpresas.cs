@@ -134,4 +134,26 @@ namespace GuerreroWeb.Models
         public int IdEncargado {  get; set; }
         public string Encargado { get; set; }   
     }
+    public class CatCajas
+    {
+		public int IdCaja { get; set; }
+		public string Caja { get; set; }
+		public string NoCaja { get; set; }
+		public int IdSuc { get; set; }
+		public int IdDepto { get; set; }
+		public int Consecutivo { get; set; }
+		public bool Activo { get; set; }
+	}
+    public class VtCajas
+    {
+		public int IdCaja { get; set; }
+		public string Caja { get; set; }
+		public string NoCaja { get; set; }
+		public int IdSuc { get; set; }
+		public string Sucursal { get; set; }
+		public int IdDepto { get; set; }
+		public string Departamento { get; set; }
+		public int Consecutivo { get; set; }
+		public bool Activo { get; set; }
+	}
 }

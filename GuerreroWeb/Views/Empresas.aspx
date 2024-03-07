@@ -5,7 +5,7 @@
     <div style="width:100%;height:75vh;" class="mh-100">
     <table width="100%">
         <tr>
-            <td colspan="4" style="background-color:black;" style="padding: 10px 10px 10px 10px">
+            <td colspan="4" style="background-color:black;padding: 10px 10px 10px 10px">
                 <asp:Label ID="LblTitulo" runat="server" Text="Catálogo de Empresas" ForeColor="White" Font-Bold="True"></asp:Label>
             </td>
         </tr>
@@ -26,7 +26,7 @@
         </tr>
         <tr id="DivBuscar" runat="server" style="background-color:orange;"> 
             <td colspan="4">
-                <asp:TextBox ID="TxtBuscar" runat="server" MaxLength="50" CssClass="coldiv2"></asp:TextBox>
+                <asp:TextBox ID="TxtBuscar" runat="server" onfocus="this.select()" MaxLength="50" CssClass="coldiv2"></asp:TextBox>
             </td>
         </tr>
         </table>

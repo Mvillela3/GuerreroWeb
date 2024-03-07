@@ -83,8 +83,8 @@
 
                                 </asp:LinkButton>
                                 <div class="dropdown-menu coldiv1 FndMenu" >
-                                    <asp:LinkButton ID="LbCxcCargos" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Cargos</asp:LinkButton>
-                                    <asp:LinkButton ID="LbCxcAbonos" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Abonos</asp:LinkButton>
+                                    <asp:LinkButton ID="LbCxcCargos" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbCxcCargos_Command">Cargos</asp:LinkButton>
+                                    <asp:LinkButton ID="LbCxcAbonos" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbCxcAbonos_Command">Abonos</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="dropdown campo_top_izq">
@@ -94,10 +94,11 @@
                                         
                                 </asp:LinkButton>
                                 <div class="dropdown-menu coldiv1 FndMenu" >
-                                    <asp:LinkButton ID="LbVentasPed" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Pedidos</asp:LinkButton>
-                                    <asp:LinkButton ID="LbVentasVen" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Ventas</asp:LinkButton>
-                                    <asp:LinkButton ID="LbVentasDev" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Devoluciones</asp:LinkButton>
-                                </div>
+                                    <asp:LinkButton ID="LbVentasPed" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbVentasPed_Command">Pedidos</asp:LinkButton>
+                                    <asp:LinkButton ID="LbVentasVen" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbVentasVen_Command">Ventas</asp:LinkButton>
+                                    <asp:LinkButton ID="LbVentasDev" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbVentasDev_Command">Devoluciones</asp:LinkButton>
+									<asp:LinkButton ID="LbClientes" runat="server" class="dropdown-item" Width="100%" ViewStateMode="Enabled" OnCommand="LbClientes_Command">Catalogo de Clientes</asp:LinkButton>
+								</div>
                             </div>
                             <div class="dropdown campo_top_izq">
                                 <asp:LinkButton ID="LbInv" runat="server" class="btn dropdown-toggle btn-block" style="background-color:rgb(223,223,223);text-align:start;" type="button" data-toggle="dropdown" data-hover="dropdown" width="100%" ViewStateMode="Enabled">
@@ -106,14 +107,16 @@
 
                                 </asp:LinkButton>
                                 <div class="dropdown-menu coldiv1 FndMenu" >
-                                    <asp:LinkButton ID="LbInvMInv" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Movimientos al Inventarios</asp:LinkButton>
-                                    <asp:LinkButton ID="LbInvArticulos" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Productos y Servicios</asp:LinkButton>
-                                    <asp:LinkButton ID="LbInvLineas" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Lineas</asp:LinkButton>
-                                    <asp:LinkButton ID="LbInvCat" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Categorias</asp:LinkButton>
-                                    <asp:LinkButton ID="LbInvMarcas" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Marcas</asp:LinkButton>
-                                    <asp:LinkButton ID="LbInvModelos" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Modelos</asp:LinkButton>
-                                    <asp:LinkButton ID="LbInvCol" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Colores</asp:LinkButton>
-                                    <asp:LinkButton ID="LbUnidades" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Unidad de Medida</asp:LinkButton>
+                                    <asp:LinkButton ID="LbInvMInv" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbInvMInv_Command">Movimientos al Inventarios</asp:LinkButton>
+                                    <asp:LinkButton ID="LbInvArticulos" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbInvArticulos_Command">Productos y Servicios</asp:LinkButton>
+                                    <asp:LinkButton ID="LbInvLineas" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbInvLineas_Command">Lineas</asp:LinkButton>
+                                    <asp:LinkButton ID="LbInvCat" runat="server" class="dropdown-item" Width="100%" ViewStateMode="Enabled" OnCommand="LbInvCat_Command">Categorias</asp:LinkButton>
+									<asp:LinkButton ID="LbInvFam" runat="server" class="dropdown-item" Width="100%" ViewStateMode="Enabled" OnCommand="LbInvFam_Command">Familias</asp:LinkButton>
+									<asp:LinkButton ID="LbInvMarcas" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbInvMarcas_Command">Marcas</asp:LinkButton>
+                                    <asp:LinkButton ID="LbInvModelos" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbInvModelos_Command">Modelos</asp:LinkButton>
+                                    <asp:LinkButton ID="LbInvCol" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbInvCol_Command">Colores</asp:LinkButton>
+									<asp:LinkButton ID="LbInvTal" runat="server" class="dropdown-item" Width="100%" ViewStateMode="Enabled" OnCommand="LbInvTal_Command">Tallas</asp:LinkButton>
+									<asp:LinkButton ID="LbInvUni" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbInvUni_Command">Unidad de Medida</asp:LinkButton>
                                 </div>
                             </div>
                             <div class="dropdown campo_top_izq">
@@ -123,10 +126,11 @@
                                         
                                 </asp:LinkButton>
                                 <div class="dropdown-menu coldiv1 FndMenu" >
-                                    <asp:LinkButton ID="LbComprasOC" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Ordenes de Compra</asp:LinkButton>
-                                    <asp:LinkButton ID="LbComprasCom" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Compras</asp:LinkButton>
-                                    <asp:LinkButton ID="LbComprasDev" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Devoluciones</asp:LinkButton>
-                                </div>
+                                    <asp:LinkButton ID="LbComprasOC" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbComprasOC_Command">Ordenes de Compra</asp:LinkButton>
+                                    <asp:LinkButton ID="LbComprasCom" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbComprasCom_Command">Compras</asp:LinkButton>
+                                    <asp:LinkButton ID="LbComprasDev" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbComprasDev_Command">Devoluciones</asp:LinkButton>
+									<asp:LinkButton ID="LbProveedores" runat="server" class="dropdown-item" Width="100%" ViewStateMode="Enabled" OnCommand="LbProveedores_Command">Catalogo de Proveedores</asp:LinkButton>
+								</div>
                             </div>
                             <div class="dropdown campo_top_izq">
                                 <asp:LinkButton ID="LbCxp" runat="server" class="btn dropdown-toggle btn-block" style="background-color:rgb(223,223,223);text-align:start;" type="button" data-toggle="dropdown" data-hover="dropdown" width="100%" ViewStateMode="Enabled">
@@ -134,22 +138,51 @@
                                     <span class="caret"></span>
                                 </asp:LinkButton>
                                 <div class="dropdown-menu coldiv1 FndMenu" >
-                                    <asp:LinkButton ID="LbCxpCargos" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Cargos</asp:LinkButton>
-                                    <asp:LinkButton ID="LbCxpAbonos" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Abonos</asp:LinkButton>
+                                    <asp:LinkButton ID="LbCxpCargos" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbCxpCargos_Command">Cargos</asp:LinkButton>
+                                    <asp:LinkButton ID="LbCxpAbonos" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbCxpAbonos_Command">Abonos</asp:LinkButton>
                                 </div>
                             </div>
-                            <div class="dropdown campo_top_izq">
+							<div class="dropdown campo_top_izq">
+								<asp:LinkButton ID="LbContabilidad" runat="server" class="btn dropdown-toggle btn-block" Style="background-color: rgb(223,223,223); text-align: start;" type="button" data-toggle="dropdown" data-hover="dropdown" Width="100%" ViewStateMode="Enabled">
+                                    Contabilidad
+                                    <span class="caret"></span>
+								</asp:LinkButton>
+								<div class="dropdown-menu coldiv1 FndMenu">
+									<asp:LinkButton ID="LbDiario" runat="server" class="dropdown-item" Width="100%" ViewStateMode="Enabled" OnCommand="LbDiario_Command">Pólizas de Diario</asp:LinkButton>
+									<asp:LinkButton ID="LbIngresos" runat="server" class="dropdown-item" Width="100%"  ViewStateMode="Enabled" OnCommand="LbIngresos_Command">Pólizas de Ingreso</asp:LinkButton>
+									<asp:LinkButton ID="LbEgreso" runat="server" class="dropdown-item" Width="100%" ViewStateMode="Enabled" OnCommand="LbEgreso_Command">Póliza de Egreso</asp:LinkButton>
+									<asp:LinkButton ID="LBCtaContable" runat="server" class="dropdown-item" Width="100%" ViewStateMode="Enabled" OnCommand="LBCtaContable_Command">Cuentas Contables</asp:LinkButton>
+									<asp:LinkButton ID="LbFPago" runat="server" class="dropdown-item FndMenu" Width="100%" ViewStateMode="Enabled" OnCommand="LbFPago_Command">Formas de Pago</asp:LinkButton>
+									<asp:LinkButton ID="LbMPago" runat="server" class="dropdown-item FndMenu" Width="100%" ViewStateMode="Enabled" OnCommand="LbMPago_Command">Métodos de Pago</asp:LinkButton>
+									<asp:LinkButton ID="LbImpuestos" runat="server" class="dropdown-item FndMenu" Width="100%" ViewStateMode="Enabled" OnCommand="LbImpuestos_Command">Cátalogo de Impuestos</asp:LinkButton>
+									<asp:LinkButton ID="LbRFiscal" runat="server" class="dropdown-item FndMenu" Width="100%" ViewStateMode="Enabled" OnCommand="LbRFiscal_Command">Cátalogo de Régimen Fiscal</asp:LinkButton>
+								</div>
+							</div>
+							<div class="dropdown campo_top_izq">
+								<asp:LinkButton ID="LbWati" runat="server" class="btn dropdown-toggle btn-block" Style="background-color: rgb(223,223,223); text-align: start;" type="button" data-toggle="dropdown" data-hover="dropdown" Width="100%" ViewStateMode="Enabled">
+                                    Mensajes Wati
+                                    <span class="caret"></span>
+								</asp:LinkButton>
+								<div class="dropdown-menu coldiv1 FndMenu">
+									<asp:LinkButton ID="LbWatiEnvios" runat="server" class="dropdown-item" Width="100%" ViewStateMode="Enabled" OnCommand="LbWatiEnvios_Command">Envios Wati</asp:LinkButton>
+									<asp:LinkButton ID="LbWatiConsulta" runat="server" class="dropdown-item" Width="100%" ViewStateMode="Enabled" OnCommand="LbWatiConsulta_Command">Consultas Para Envío</asp:LinkButton>
+									<asp:LinkButton ID="LbWatiPlan" runat="server" class="dropdown-item" Width="100%" ViewStateMode="Enabled" OnCommand="LbWatiPlan_Command">Plantillas Wati</asp:LinkButton>
+									<asp:LinkButton ID="LbAuto" runat="server" class="dropdown-item" Width="100%" ViewStateMode="Enabled" OnCommand="LbAuto_Command">Configuración de Envios Automáticos</asp:LinkButton>
+								</div>
+							</div>
+							<div class="dropdown campo_top_izq">
                                 <asp:LinkButton ID="LbRep" runat="server" class="btn dropdown-toggle btn-block" style="background-color:rgb(223,223,223);text-align:start;" type="button" data-toggle="dropdown" data-hover="dropdown" width="100%" ViewStateMode="Enabled">
                                     Reportes
                                     <span class="caret"></span>
                                 </asp:LinkButton>
                                 <div class="dropdown-menu coldiv1 FndMenu" >
-                                    <asp:LinkButton ID="LbRepCxc" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Cuentas Por Cobrar</asp:LinkButton>
-                                    <asp:LinkButton ID="LbRepVen" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Ventas</asp:LinkButton>
-                                    <asp:LinkButton ID="LbRepInv" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Inventarios</asp:LinkButton>
-                                    <asp:LinkButton ID="LbRepCom" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Compras</asp:LinkButton>
-                                    <asp:LinkButton ID="LbRepCxp" runat="server" class="dropdown-item" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Cuentas Por Pagar</asp:LinkButton>
-                                </div>
+                                    <asp:LinkButton ID="LbRepCxc" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbRepCxc_Command">Cuentas Por Cobrar</asp:LinkButton>
+                                    <asp:LinkButton ID="LbRepVen" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbRepVen_Command">Ventas</asp:LinkButton>
+                                    <asp:LinkButton ID="LbRepInv" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbRepInv_Command">Inventarios</asp:LinkButton>
+                                    <asp:LinkButton ID="LbRepCom" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbRepCom_Command">Compras</asp:LinkButton>
+                                    <asp:LinkButton ID="LbRepCxp" runat="server" class="dropdown-item" width="100%" ViewStateMode="Enabled" OnCommand="LbRepCxp_Command">Cuentas Por Pagar</asp:LinkButton>
+									<asp:LinkButton ID="LbRepConta" runat="server" class="dropdown-item" Width="100%" ViewStateMode="Enabled" OnCommand="LbRepConta_Command">Contable</asp:LinkButton>
+								</div>
                             </div>
                             <div class="dropdown campo_top_izq">
                                 <asp:LinkButton ID="LbConf" runat="server" class="btn dropdown-toggle btn-block" style="background-color:rgb(223,223,223);text-align:start;" type="button" data-toggle="dropdown" data-hover="dropdown" width="100%" ViewStateMode="Enabled">
@@ -157,21 +190,22 @@
                                     <span class="caret "></span>
                                 </asp:LinkButton>
                                 <div class="dropdown-menu coldiv1" >
-                                    <asp:LinkButton ID="LbConfEmpresa" runat="server" class="dropdown-item FndMenu" width="100%" href="../Views/Empresas.aspx" ViewStateMode="Enabled">Empresa</asp:LinkButton>
-                                    <asp:LinkButton ID="LbConfSist" runat="server" class="dropdown-item FndMenu" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Configuración Sistema</asp:LinkButton>
-                                    <asp:LinkButton ID="LbConfMod" runat="server" class="dropdown-item FndMenu" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Modulos</asp:LinkButton>
-                                    <asp:LinkButton ID="LbConfMovtos" runat="server" class="dropdown-item FndMenu" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Movimientos</asp:LinkButton>
-                                    <asp:LinkButton ID="LbConfFolios" runat="server" class="dropdown-item FndMenu" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Folios</asp:LinkButton>
-                                    <asp:LinkButton ID="LbConfUsuarios" runat="server" class="dropdown-item FndMenu" width="100%" href="../Views/Usuarios.aspx" ViewStateMode="Enabled">Usuarios</asp:LinkButton>
-                                    <asp:LinkButton ID="LbConfPerfiles" runat="server" class="dropdown-item FndMenu" width="100%" href="../Views/VstPerfiles.aspx" ViewStateMode="Enabled">Perfiles</asp:LinkButton>
-                                    <asp:LinkButton ID="LbConfSuc" runat="server" class="dropdown-item FndMenu" width="100%" href="../Views/Sucursales.aspx" ViewStateMode="Enabled">Sucursales</asp:LinkButton>
-                                    <asp:LinkButton ID="LbConfAlm" runat="server" class="dropdown-item FndMenu" width="100%" href="../Views/Almacenes.aspx" ViewStateMode="Enabled">Almacenes</asp:LinkButton>
-                                    <asp:LinkButton ID="LbConfDeptos" runat="server" class="dropdown-item FndMenu" width="100%" href="../Views/Departamentos.aspx" ViewStateMode="Enabled">Departamentos</asp:LinkButton>
-                                    <asp:LinkButton ID="LbConfPais" runat="server" class="dropdown-item FndMenu" width="100%" href="../Views/Paises.aspx" ViewStateMode="Enabled">Paises</asp:LinkButton>
-                                    <asp:LinkButton ID="LbConfEst" runat="server" class="dropdown-item FndMenu" width="100%" href="../Views/Estados.aspx" ViewStateMode="Enabled">Estados</asp:LinkButton>
-                                    <asp:LinkButton ID="LbConfCiu" runat="server" class="dropdown-item FndMenu" width="100%" href="../Views/Ciudades.aspx" ViewStateMode="Enabled">Ciudades</asp:LinkButton>
-                                    <asp:LinkButton ID="LbConfCol" runat="server" class="dropdown-item FndMenu" width="100%" href="../Views/Colonias.aspx" ViewStateMode="Enabled">Colonias</asp:LinkButton>
-                                </div>
+                                    <asp:LinkButton ID="LbConfEmpresa" runat="server" class="dropdown-item FndMenu" width="100%" ViewStateMode="Enabled" OnCommand="LbConfEmpresa_Command">Empresa</asp:LinkButton>
+                                    <asp:LinkButton ID="LbConfSist" runat="server" class="dropdown-item FndMenu" width="100%" ViewStateMode="Enabled" OnCommand="LbConfSist_Command">Configuración Sistema</asp:LinkButton>
+                                 <!--   <asp:LinkButton ID="LbConfMod" runat="server" class="dropdown-item FndMenu" width="100%" href="../Construccion.aspx" ViewStateMode="Enabled">Modulos</asp:LinkButton> -->
+                                    <asp:LinkButton ID="LbConfMovtos" runat="server" class="dropdown-item FndMenu" width="100%" ViewStateMode="Enabled" OnCommand="LbConfMovtos_Command">Tipo de Documentos</asp:LinkButton>
+                                    <asp:LinkButton ID="LbConfFolios" runat="server" class="dropdown-item FndMenu" width="100%" ViewStateMode="Enabled" OnCommand="LbConfFolios_Command">Folios</asp:LinkButton>
+                                    <asp:LinkButton ID="LbConfUsuarios" runat="server" class="dropdown-item FndMenu" width="100%" ViewStateMode="Enabled" OnCommand="LbConfUsuarios_Command">Usuarios</asp:LinkButton>
+                                    <asp:LinkButton ID="LbConfPerfiles" runat="server" class="dropdown-item FndMenu" width="100%" ViewStateMode="Enabled" OnCommand="LbConfPerfiles_Command">Perfiles</asp:LinkButton>
+                                    <asp:LinkButton ID="LbConfSuc" runat="server" class="dropdown-item FndMenu" width="100%" ViewStateMode="Enabled" OnCommand="LbConfSuc_Command">Sucursales</asp:LinkButton>
+                                    <asp:LinkButton ID="LbConfAlm" runat="server" class="dropdown-item FndMenu" width="100%" ViewStateMode="Enabled" OnCommand="LbConfAlm_Command">Almacenes</asp:LinkButton>
+                                    <asp:LinkButton ID="LbConfDeptos" runat="server" class="dropdown-item FndMenu" width="100%" ViewStateMode="Enabled" OnCommand="LbConfDeptos_Command">Departamentos</asp:LinkButton>
+									<asp:LinkButton ID="LbCajas" runat="server" class="dropdown-item FndMenu" Width="100%" ViewStateMode="Enabled" OnCommand="LbCajas_Command">Cajas</asp:LinkButton>
+									<asp:LinkButton ID="LbConfPais" runat="server" class="dropdown-item FndMenu" width="100%" ViewStateMode="Enabled" OnCommand="LbConfPais_Command">Paises</asp:LinkButton>
+                                    <asp:LinkButton ID="LbConfEst" runat="server" class="dropdown-item FndMenu" width="100%" ViewStateMode="Enabled" OnCommand="LbConfEst_Command">Estados</asp:LinkButton>
+                                    <asp:LinkButton ID="LbConfCiu" runat="server" class="dropdown-item FndMenu" width="100%" ViewStateMode="Enabled" OnCommand="LbConfCiu_Command">Ciudades</asp:LinkButton>
+                                    <asp:LinkButton ID="LbConfCol" runat="server" class="dropdown-item FndMenu" width="100%" ViewStateMode="Enabled" OnCommand="LbConfCol_Command">Colonias</asp:LinkButton>
+								</div>
                             </div>
                         </div>
                     </div>
