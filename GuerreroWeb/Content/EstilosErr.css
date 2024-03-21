@@ -382,7 +382,7 @@ form {
     left: 10%;
 }
 .Activo {
-    background-color: orange;
+    /*background-color: orange;*/
     color: black;
     padding: 2px;
     height: 20px;
@@ -396,7 +396,7 @@ form {
     }
 
 .inActivo {
-    background-color: yellow;
+    /*background-color: yellow;*/
     color: black;
     padding: 2px;
     height: 20px;

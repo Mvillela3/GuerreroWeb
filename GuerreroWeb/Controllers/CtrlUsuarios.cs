@@ -1,17 +1,14 @@
 ﻿using GuerreroWeb.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using static GuerreroWeb.Controllers.DBConexion;
-using System.Data.SqlClient;
 using System.Data;
-using GuerreroWeb.Views;
+using System.Data.SqlClient;
+using static GuerreroWeb.Controllers.DBConexion;
 
 
 namespace GuerreroWeb.Controllers
 {
-    public class CtrlUsuarios
+	public class CtrlUsuarios
     {
         //private ModConexion mconexion;
         private DBConexion conexion = new DBConexion();
@@ -261,15 +258,55 @@ namespace GuerreroWeb.Controllers
             return Lista;
 
         }
-        public List<ModUsuarios> DdlUsuarios()
+		public List<string> AutoCompletaUsuarios(string prefixText)
+		{
+
+			prefixText = "%" + prefixText + "%";
+
+			var Lista = new List<string>();
+			var listaParams = new List<SqlParameter>();
+
+			String sql = "SELECT top 10 Usuario  ";
+			sql += " FROM dbo.Usuarios ";
+			sql += " WHERE Estatus = 'Activo' ";
+			sql += " and Usuario Like @Usuario ";
+			sql += " order by Usuario";
+
+			listaParams.Clear();
+			listaParams.Add(new SqlParameter("@Usuario", prefixText));
+
+			try
+			{
+				using (var reader = Cmd.Comandos(conexion.AbreConexion(), sql, CommandType.Text, listaParams).ExecuteReader())
+				{
+					while (reader.Read())
+					{
+						string Usuarios;
+						Usuarios = reader["Usuario"].ToString();
+						Lista.Add(Usuarios);
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				string Usuarios;
+				Usuarios = "Error al llenar los Usuarios" + ex.Message.ToString().Replace("'", "-") + ".";
+				Lista.Add(Usuarios);
+			}
+			return Lista;
+
+		}
+
+		public List<ModUsuarios> DdlUsuarios()
         {
+
             var Lista = new List<ModUsuarios>();
             var listaParams = new List<SqlParameter>();
 
             String sql = "SELECT IdUsu, Nombre, Usuario  ";
             sql += " FROM dbo.Usuarios ";
             sql += " WHERE Estatus = 'Activo' ";
-            sql += " union Select 0 as IdUsu, ' Seleccione una Opción' as Nombre, ' Seleccione Una Opción' as Usuario";
+            //sql += " union Select 0 as IdUsu, ' Seleccione una Opción' as Nombre, ' Seleccione Una Opción' as Usuario";
             sql += " order by Usuario";
 
             listaParams.Clear();

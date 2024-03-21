@@ -34,7 +34,7 @@ namespace GuerreroWeb.Views.Inventarios
 			ChecaUsuario(usuario);
 			if (!IsPostBack)
 			{
-				if (!VtUsuario.EntraModelos)
+				if (!VtUsuario.EntraColores)
 				{
 
 					Response.Redirect("~/Inicio.aspx");
@@ -139,7 +139,7 @@ namespace GuerreroWeb.Views.Inventarios
 		}
 		private void AccionBtn()
 		{
-			BtnNuevo.Enabled = VtUsuario.ModelosAdd;
+			BtnNuevo.Enabled = VtUsuario.ColoresAdd;
 		}
 		private void MsgBox(string msg, string titulo)
 		{

@@ -8,6 +8,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using AjaxControlToolkit;
 using System.Collections;
+using System.Drawing;
 //using System.Windows.Forms;
 
 namespace GuerreroWeb.Views
@@ -765,6 +766,21 @@ namespace GuerreroWeb.Views
 			else
 			{
 				LblAvisoDep.Visible = false;
+			}
+		}
+
+		protected void TcPestana_ActiveTabChanged(object sender, EventArgs e)
+		{
+			LblPestana1.BackColor = Color.Yellow;
+			LblPestana2.BackColor = Color.Yellow;
+
+			if(TcPestana.ActiveTabIndex == 0)
+			{
+				LblPestana1.BackColor = Color.Orange;
+			}
+			if (TcPestana.ActiveTabIndex == 1)
+			{
+				LblPestana2.BackColor = Color.Orange;
 			}
 		}
 	}

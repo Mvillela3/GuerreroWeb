@@ -1180,6 +1180,50 @@ namespace GuerreroWeb.Controllers
 
 
 		}
+		public List<ModEmpleadoCumple> EmpleadosCumple(string Sucursal)
+		{
+
+
+			string sql = "Select NombreC, Sucursal, day(convert(datetime, FeNac, 105)) as Dia ";
+			sql += " from VtEmpleados  ";
+			sql += " where Sucursal = @Sucursal and month(convert(datetime, FeNac, 105)) = month(cast(getdate() as date)) ";
+            sql += " Order by Dia";
+
+			List<ModEmpleadoCumple> lista = new List<ModEmpleadoCumple>();
+			var listaParams = new List<SqlParameter>();
+			listaParams.Clear();
+			listaParams.Add(new SqlParameter("@Sucursal", Sucursal));
+
+			try
+			{
+				using (var reader = Cmd.Comandos(conexion.AbreConexion(), sql, CommandType.Text, listaParams).ExecuteReader())
+				{
+					while (reader.Read())
+					{
+						var lista1 = new ModEmpleadoCumple();
+						lista1.NombreC = reader["NombreC"].ToString();
+						lista1.Sucursal = reader["Sucursal"].ToString();
+						lista1.Dia = reader["Dia"].ToString();
+
+						lista.Add(lista1);
+					}
+
+				}
+
+
+			}
+			catch (Exception ex)
+			{
+
+				var lista1 = new ModEmpleadoCumple();
+				lista1.Dia = ex.HResult.ToString();
+				lista1.Sucursal = "Error";
+				lista1.NombreC = "Error al Consultar las Configuraciones " + ex.Message.ToString().Replace("'", "-") + ".";
+				lista.Add(lista1);
+			}
+			return lista;
+
+		}
 
 	}
 }

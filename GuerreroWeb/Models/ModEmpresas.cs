@@ -156,4 +156,34 @@ namespace GuerreroWeb.Models
 		public int Consecutivo { get; set; }
 		public bool Activo { get; set; }
 	}
+	public class ModEmpleados
+	{
+		public int IdEmpleado { get; set; }
+		public string Codigo { get; set; }
+		public string Nombre { get; set; }
+		public string Nombre1 { get; set; }
+		public string Nombre2 { get; set; }
+		public string Paterno { get; set; }
+		public string Materno { get; set; }
+		public string NombreC { get; set; }
+		public DateTime FeNac { get; set; }
+		public string CURP { get; set; }
+		public string RFC { get; set; }
+		public string NSS { get; set; }
+		public DateTime FeAlta { get; set; }
+		public string Departamento { get; set; }
+		public string Puesto { get; set; }
+		public string Telefono { get; set; }
+		public string Email { get; set; }
+		public string Sucursal { get; set; }
+
+
+	}
+    public class ModEmpleadoCumple
+    {
+		public string NombreC { get; set; }
+		public string Sucursal { get; set; }
+		public string Dia { get; set; }
+
+	}
 }

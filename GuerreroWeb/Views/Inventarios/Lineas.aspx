@@ -15,7 +15,7 @@
 					//alert("si");
 				}
 				else {
-					document.getElementById("MainContent_LblAvisoPer").style.display = "none";
+					document.getElementById("MainContent_LblMensaje1").style.display = "none";
 					//alert("no");
 				}
 			}
@@ -69,7 +69,8 @@
 				</td>
 			</tr>
 		</table>
-		<div style="overflow-x: scroll; overflow-y: scroll; width: 50%; height: 100%;">
+		<div class="coldiv1" style="background-image: url(../../Resources/FondoGro2.jpg); background-size: 100%  auto; background-repeat: no-repeat; background-position: 50% 50%;" >
+		<div style="overflow-x: scroll; overflow-y: scroll; width: 75%; height: 100%;">
 			<div class="campo_top_izq" style="width: 100%; height: 490px">
 
 				<asp:GridView ID="GvConsulta" runat="server" Width="100%" Height="100%" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" AllowPaging="True" ShowHeaderWhenEmpty="True" ViewStateMode="Enabled" OnRowDataBound="GvConsulta_RowDataBound" OnRowDeleting="GvConsulta_RowDeleting" OnRowEditing="GvConsulta_RowEditing" OnPageIndexChanging="GvConsulta_PageIndexChanging">
@@ -90,7 +91,7 @@
 							<HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="5%" Height="40px" />
 							<ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="5%" Height="30px" />
 						</asp:TemplateField>
-						<asp:TemplateField HeaderText="Caja">
+						<asp:TemplateField HeaderText="Linea">
 							<ItemTemplate>
 								<asp:Label runat="server" ID="LblMovto" Text='<%# Bind("Linea") %>'></asp:Label>
 							</ItemTemplate>
@@ -98,6 +99,24 @@
 							<HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="20%" Height="40px" />
 							<ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Width="20%" Height="30px" />
 						</asp:TemplateField>
+                    <asp:TemplateField HeaderText="Usa Tallas">
+                        <ItemTemplate>
+                            <asp:Image ID="ImgTalla" runat="server" Height="40" Width="40" ImageUrl="~/Resources/Check2.png" />
+                            <asp:HiddenField ID="HfTalla" runat="server" value='<%# Bind("UsaTalla") %>' />
+                        </ItemTemplate>
+                    <FooterStyle Width="5%" />
+                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="20%" Height="40px" />
+                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="20%" Height="30px" />
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Usa Colores">
+                        <ItemTemplate>
+                            <asp:Image ID="ImgColor" runat="server" Height="40" Width="40" ImageUrl="~/Resources/Check2.png" />
+                            <asp:HiddenField ID="HfColor" runat="server" value='<%# Bind("UsaColor") %>' />
+                        </ItemTemplate>
+                    <FooterStyle Width="5%" />
+                    <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="20%" Height="40px" />
+                    <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" Width="20%" Height="30px" />
+                    </asp:TemplateField>
 					</Columns>
 					<FooterStyle BackColor="Orange" Font-Bold="True" ForeColor="Black" />
 					<HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" Font-Size="Larger" HorizontalAlign="Center" VerticalAlign="Middle" />
@@ -110,6 +129,8 @@
 					<SortedDescendingHeaderStyle BackColor="#383838" />
 				</asp:GridView>
 			</div>
+		</div>
+
 		</div>
 	</div>
 
@@ -146,14 +167,20 @@
 					</td>
 				</tr>
 				<tr>
-					<td colspan="4">
-						<br />
-					</td>
+                <td  class="campo_cen_izq" colspan="2" style="padding: 2px 10px  2px  10px">
+                    <asp:Label ID="Label4" runat="server" Text="Usa Tallas:" BorderStyle="None" Font-Size="Medium" style="text-align: justify;padding: 0  10px  0  10px" ViewStateMode="Enabled" Font-Bold="True"></asp:Label> 
+                </td>
+                <td class="campo_cen_izq" colspan="2" style="padding: 2px 10px  2px  10px">
+					<asp:CheckBox ID="ChkTalla" runat="server" Height="20px" ViewStateMode="Enabled" Width="20px" CssClass="chkbox1" />
+                </td>
 				</tr>
 				<tr>
-					<td colspan="4">
-						<br />
-					</td>
+                <td  class="campo_cen_izq" colspan="2" style="padding: 2px 10px  2px  10px">
+                    <asp:Label ID="Label3" runat="server" Text="Usa Colores:" BorderStyle="None" Font-Size="Medium" style="text-align: justify;padding: 0  10px  0  10px" ViewStateMode="Enabled" Font-Bold="True"></asp:Label> 
+                </td>
+                <td class="campo_cen_izq" colspan="2" style="padding: 2px 10px  2px  10px">
+					<asp:CheckBox ID="ChkColor" runat="server" Height="20px" ViewStateMode="Enabled" Width="20px" CssClass="chkbox1" />
+                </td>
 				</tr>
 				<tr>
 					<td colspan="4">

@@ -80,7 +80,7 @@
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Es Default">
                         <ItemTemplate>
-                            <asp:Image ID="ImgDefault" runat="server" Height="40" Width="40" />
+                            <asp:Image ID="ImgDefault" runat="server" Height="40" Width="40" ImageUrl="~/Resources/Check2.png" />
                             <asp:HiddenField ID="HfDefault" runat="server" value='<%# Bind("EsDefault") %>' />
                         </ItemTemplate>
                     <FooterStyle Width="5%" />
@@ -140,7 +140,7 @@
                     <asp:Label ID="Label4" runat="server" Text="Es Default:" BorderStyle="None" Font-Size="Medium" style="text-align: justify;padding: 0  10px  0  10px" ViewStateMode="Enabled" Font-Bold="True"></asp:Label> 
                 </td>
                 <td class="campo_cen_izq" colspan="2" style="padding: 2px 10px  2px  10px">
-                    <asp:CheckBox ID="ChkDefault" runat="server" Height="20px" Text=" " Width="20px" />
+					<asp:CheckBox ID="ChkDefault" runat="server" Height="20px" ViewStateMode="Enabled" Width="20px" CssClass="chkbox1" />
                 </td>
             </tr>
             <tr>

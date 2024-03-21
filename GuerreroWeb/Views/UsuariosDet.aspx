@@ -183,11 +183,12 @@
 
 		</div>--%>
 		<div class="coldiv1">
-			<ajaxToolkit:TabContainer ID="TcPestana" runat="server" ActiveTabIndex="0" Height="400px" Width="100%" BackColor="#FF6600" ScrollBars="Auto" ViewStateMode="Enabled" VerticalStripWidth="800px" CssClass="Tabjax">
+
+			<ajaxToolkit:TabContainer ID="TcPestana" runat="server" ActiveTabIndex="0" Height="400px" Width="100%" BackColor="#FF6600" ScrollBars="Auto" ViewStateMode="Enabled" VerticalStripWidth="800px" CssClass="Tabjax" AutoPostBack="True" OnActiveTabChanged="TcPestana_ActiveTabChanged">
 				<ajaxToolkit:TabPanel ID="Pestana1" runat="server" Height="100%" Width="100%">
 					<HeaderTemplate>
 						<div runat="server" id="Div1" class="coldiv1 campo_cen_cen">
-							<asp:Label ID="LblPestana1" runat="server" Text="Sucursales" Font-Bold="True" Font-Size="Small" CssClass="Activo"></asp:Label>
+							<asp:Label ID="LblPestana1" runat="server" Text="Sucursales" Font-Bold="True" Font-Size="Small" CssClass="Activo" ViewStateMode="Enabled" BackColor="Orange"></asp:Label>
 						</div>
 					</HeaderTemplate>
 					<ContentTemplate >
@@ -251,7 +252,7 @@
 				<ajaxToolkit:TabPanel ID="Pestana2" runat="server" height="100%" Width="100%">
 					<HeaderTemplate>
 						<div runat="server" id="Div2" class="coldiv1 campo_cen_cen">
-							<asp:Label ID="LblPestana2" runat="server" Text="Perfil" Font-Bold="True" Font-Size="Small" CssClass="inActivo"></asp:Label>
+							<asp:Label ID="LblPestana2" runat="server" Text="Perfil" Font-Bold="True" Font-Size="Small" CssClass="inActivo" ViewStateMode="Enabled" BackColor="Yellow"></asp:Label>
 						</div>
 					</HeaderTemplate>
 					<ContentTemplate>
@@ -276,6 +277,8 @@
 						</div>
 					</ContentTemplate>
 				</ajaxToolkit:TabPanel>
+
+
 			</ajaxToolkit:TabContainer>
 		</div>																			
 

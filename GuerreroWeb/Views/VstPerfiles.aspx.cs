@@ -33,7 +33,7 @@ namespace GuerreroWeb.Views
 			ChecaUsuario(usuario);
 			if (!IsPostBack)
 			{
-				if (!VtUsuario.EntraUsuarios)
+				if (!VtUsuario.EntraPerfiles)
 				{
 
 					Response.Redirect("~/Inicio.aspx");

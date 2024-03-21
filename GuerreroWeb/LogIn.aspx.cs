@@ -1,60 +1,80 @@
 ﻿using GuerreroWeb.Controllers;
 using GuerreroWeb.Models;
 using System;
+using System.Configuration;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+//using System.Data.SqlClient;
+//using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using static GuerreroWeb.Controllers.DBConexion;
+//using System.Web.Services;
+//using System.Web.Script.Services;
+
+using GuerreroWeb.Views;
+using System.Web.Services;
 
 namespace GuerreroWeb
 {
-    public partial class LogIn : System.Web.UI.Page
+	public partial class LogIn : System.Web.UI.Page
     {
         CtrlUsuarios Usuarios = new CtrlUsuarios();
         VtUsuarios mUsuario = new VtUsuarios();
         ModUsuarios musuario = new ModUsuarios();
+		private static DBConexion conexion = new DBConexion();
+		private static DBComandos Cmd = new DBComandos();
 
-        protected void Page_Load(object sender, EventArgs e)
+		protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 LlenaUsuarios();
+				TxtUsuario.Focus();
             }
+
 
         }
         private void LlenaUsuarios()
         {
-            var lista = Usuarios.DdlUsuarios();
-            if (lista == null)
-            {
+   //         CbxUsuario.DataSource = null;
+   //         CbxUsuario.DataBind();
 
-            }
-            if (lista.Count > 0)
-            {
-                DdlUsuario.DataSource = lista;
-                DdlUsuario.DataTextField = "Usuario";
-                DdlUsuario.DataValueField = "Usuario";
-                DdlUsuario.DataBind();
-            }
-        }
+   //         var lista = Usuarios.DdlUsuarios();
+   //         if (lista == null)
+   //         {
+
+   //         }
+   //         if (lista.Count > 0)
+   //         {
+			//	CbxUsuario.DataSource = lista;
+			//	CbxUsuario.DataTextField = "Usuario";
+			//	CbxUsuario.DataValueField = "Usuario";
+			//	CbxUsuario.DataBind();
+
+			//}
+		}
 
         protected void BtnEntrar_Command(object sender, CommandEventArgs e)
         {
-            string usu1 = DdlUsuario.SelectedItem.Text;
+			//string usu1 = CbxUsuario.SelectedItem.Text;
+			string usu1 = TxtUsuario.Text;
             string pwd1 = TxtPwd.Text;
 
-            if (DdlUsuario.SelectedItem == null)
-            {
-                LblUsu.Visible = true;
-                return;
+            //if (CbxUsuario.SelectedItem == null)
+			if (TxtUsuario.Text == string.Empty)
+			{
+				LblMensaje1.Visible = true;
+				LblMensaje1.Attributes["Style"] = "display: '';";
+
+				return;
             }
             if(TxtPwd.Text.Length == 0)
             {
-                LblPwd.Visible = true;
-            }
+                LblMensaje2.Visible = true;
+				LblMensaje2.Attributes["Style"] = "display: '';";
+			}
 
-            LblMensaje.Text = "";
+			LblMensaje.Text = "";
             LblMensaje.Visible = false;
 
             if (pwd1.Length == 0 || usu1.Length == 0)
@@ -84,24 +104,76 @@ namespace GuerreroWeb
         {
             if(TxtPwd.Text.Length == 0)
             {
-                LblPwd.Visible=true;
-            }
-            else
-            {
-                LblPwd.Visible = false;
-            }
-        }
+                LblMensaje2.Visible=true;
+				LblMensaje2.Attributes["Style"] = "display: '';";
 
-        protected void DdlUsuario_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(DdlUsuario.SelectedItem.Text.Length == 0)
+			}
+			else
             {
-                LblUsu.Visible=true;
-            }
-            else
-            {
-                LblUsu.Visible = false;
-            }
-        }
-    }
+                LblMensaje2.Visible = false;
+				LblMensaje2.Attributes["Style"] = "display: 'none';";
+			}
+		}
+
+		//protected void CbxUsuario_SelectedIndexChanged(object sender, EventArgs e)
+		//{
+		//	if (CbxUsuario.SelectedItem.Text.Length == 0)
+		//	{
+		//		LblMensaje1.Visible = true;
+		//		LblMensaje1.Attributes["Style"] = "display: '';";
+
+		//	}
+		//	else
+		//	{
+		//		LblMensaje1.Visible = false;
+		//		LblMensaje1.Attributes["Style"] = "display: 'none';";
+		//	}
+
+		//}
+
+		//protected void CbxUsuario_TextChanged(object sender, EventArgs e)
+		//{
+		//	if (CbxUsuario.Text == string.Empty)
+		//	{
+		//		LblMensaje1.Visible = true;
+		//		LblMensaje1.Attributes["Style"] = "display: '';";
+
+		//	}
+		//	else
+		//	{
+		//		LblMensaje1.Visible = false;
+		//		LblMensaje1.Attributes["Style"] = "display: 'none';";
+		//	}
+
+		//}
+
+		[WebMethod]
+		//[System.Web.Services.WebMethodAttribute(), System.Web.Script.Services.ScriptMethodAttribute()]
+		public static List<string> AutoCompleta(string prefixText)
+		{
+
+
+			//List<string> Lista = Usuarios.AutoCompletaUsuarios(prefixText);
+			List<string> Lista = new List<string>();
+
+			Lista.Add("juan");
+			Lista.Add("pedro");
+			Lista.Add("jose");
+			Lista.Add("josue");
+			Lista.Add("patricia");
+			Lista.Add("laura");
+
+			return Lista;
+
+		}
+
+		protected void AutoCompleteExtender1_DataBinding(object sender, EventArgs e)
+		{
+			//List<string> Lista = Usuarios.AutoCompletaUsuarios(TxtUsuario.Text);
+			//AutoCompleteExtender1.DataBind();
+
+
+			LblMensaje.Visible = true;
+		}
+	}
 }

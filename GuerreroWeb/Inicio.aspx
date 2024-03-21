@@ -2,7 +2,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <link href="~/Resources/iconoGroHD.ico" rel="shortcut icon" type="image/x-icon" />
     <div >
-        <br />
+		<section id="bannerdiv" class="fondointra campo_cen_cen">
+			<div id="banner1" class="banner">
+                <h2 class="banner2"></h2>
+			</div>
+		</section>
+
     </div>
 <!--
         <asp:Panel ID="Panel1" runat="server" CssClass="coldiv2 campo_cen_cen" style="width:550px; height:400px" >

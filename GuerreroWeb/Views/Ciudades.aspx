@@ -151,8 +151,8 @@
                     <asp:Label ID="Label4" runat="server" Text="Es Default:" BorderStyle="None" Font-Size="Medium" style="text-align: justify;padding: 0  10px  0  10px" ViewStateMode="Enabled" Font-Bold="True"></asp:Label> 
                 </td>
                 <td class="campo_cen_izq" colspan="2" style="padding: 2px 10px  2px  10px">
-                    <asp:CheckBox ID="ChkDefault" runat="server" Height="20px" Text=" " Width="20px" ViewStateMode="Enabled" />
-                </td>
+					<asp:CheckBox ID="ChkDefault" runat="server" Height="20px" ViewStateMode="Enabled" Width="20px" CssClass="chkbox1" />
+				</td>
             </tr>
             <tr>
                 <td  class="campo_cen_izq" colspan="2" style="padding: 2px 10px  2px  10px">

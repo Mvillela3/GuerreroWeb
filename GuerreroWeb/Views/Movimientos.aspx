@@ -15,7 +15,7 @@
 					//alert("si");
 				}
 				else {
-					document.getElementById("MainContent_LblAvisoPer").style.display = "none";
+					document.getElementById("MainContent_LblMensaje1").style.display = "none";
 					//alert("no");
 				}
 			}

@@ -15,7 +15,7 @@
 					//alert("si");
 				}
 				else {
-					document.getElementById("MainContent_LblAvisoPer").style.display = "none";
+					document.getElementById("MainContent_LblMensaje1").style.display = "none";
 					//alert("no");
 				}
 			}
@@ -75,6 +75,8 @@
 				</td>
 			</tr>
 		</table>
+		<div class="coldiv1" style="background-image: url(../../Resources/FondoGro2.jpg); background-size: 100%  auto; background-repeat: no-repeat; background-position: 50% 50%;" >
+
 		<div style="overflow-x: scroll; overflow-y: scroll; width: 50%; height: 100%;">
 			<div class="campo_top_izq" style="width: 100%; height: 490px">
 
@@ -124,6 +126,7 @@
 					<SortedDescendingHeaderStyle BackColor="#383838" />
 				</asp:GridView>
 			</div>
+		</div>
 		</div>
 	</div>
 

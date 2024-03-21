@@ -95,8 +95,10 @@ namespace GuerreroWeb.Views.Inventarios
 				{
 					ImageButton ibeditar = GvConsulta.Rows[i].FindControl("BtnEditar") as ImageButton;
 					ImageButton ibdel = GvConsulta.Rows[i].FindControl("BtnDel") as ImageButton;
-					HiddenField hfactivo = GvConsulta.Rows[i].FindControl("HfActivo") as HiddenField;
-					Image ImActivo = GvConsulta.Rows[i].FindControl("ImgActivo") as Image;
+					HiddenField hftalla = GvConsulta.Rows[i].FindControl("HfTalla") as HiddenField;
+					Image Imtalla = GvConsulta.Rows[i].FindControl("ImgTalla") as Image;
+					HiddenField hfcolor = GvConsulta.Rows[i].FindControl("HfColor") as HiddenField;
+					Image Imcolor = GvConsulta.Rows[i].FindControl("ImgColor") as Image;
 
 					if (ibeditar != null)
 					{
@@ -106,15 +108,26 @@ namespace GuerreroWeb.Views.Inventarios
 					{
 						ibdel.Enabled = VtUsuario.LineasDel;
 					}
-					if (ImActivo != null && hfactivo != null)
+					if (Imtalla != null && hftalla != null)
 					{
-						if (Convert.ToBoolean(hfactivo.Value.ToString()))
+						if (Convert.ToBoolean(hftalla.Value.ToString()))
 						{
-							ImActivo.ImageUrl = @"~/Resources/Check1.png";
+							Imtalla.ImageUrl = @"~/Resources/Check1.png";
 						}
 						else
 						{
-							ImActivo.ImageUrl = @"~/Resources/Check2.png";
+							Imtalla.ImageUrl = @"~/Resources/Check2.png";
+						}
+					}
+					if (Imcolor != null && hfcolor != null)
+					{
+						if (Convert.ToBoolean(hfcolor.Value.ToString()))
+						{
+							Imcolor.ImageUrl = @"~/Resources/Check1.png";
+						}
+						else
+						{
+							Imcolor.ImageUrl = @"~/Resources/Check2.png";
 						}
 					}
 
@@ -136,6 +149,8 @@ namespace GuerreroWeb.Views.Inventarios
 			Session["AccLin"] = "N";
 			HfId.Value = "0";
 			TxtLinea.Text = "";
+			ChkColor.Checked = false;
+			ChkTalla.Checked = false;
 
 			TxtLinea.Focus();
 
@@ -226,9 +241,12 @@ namespace GuerreroWeb.Views.Inventarios
 					TxtLinea.Text = respuesta.Linea;
 
 					TxtLinea.Focus();
+					ChkColor.Checked = respuesta.UsaColor;
+					ChkTalla.Checked = respuesta.UsaTalla;
 
 					VtMdl.Visible = true;
 					MpeVtMdl.Show();
+
 
 				}
 			}
@@ -299,6 +317,8 @@ namespace GuerreroWeb.Views.Inventarios
 			}
 			mLineas.IdLinea = Convert.ToInt32(HfId.Value.ToString());
 			mLineas.Linea = TxtLinea.Text;
+			mLineas.UsaColor = ChkColor.Checked;
+			mLineas.UsaTalla = ChkTalla.Checked;
 
 			RespuestaSQL respuesta = null;
 

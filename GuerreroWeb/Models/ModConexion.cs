@@ -8,7 +8,7 @@ namespace GuerreroWeb.Models
 {
     public class ModConexion
     {
-        public SqlConnection conn { get; set; }
+        public static SqlConnection conn { get; set; }
         //public SqlCommand Cmd { get; set; }
 
     }

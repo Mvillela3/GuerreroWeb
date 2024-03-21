@@ -141,6 +141,42 @@ namespace GuerreroWeb.Views.Inventarios
 		protected global::System.Web.UI.WebControls.TextBox TxtLinea;
 
 		/// <summary>
+		/// Control Label4.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label Label4;
+
+		/// <summary>
+		/// Control ChkTalla.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.CheckBox ChkTalla;
+
+		/// <summary>
+		/// Control Label3.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label Label3;
+
+		/// <summary>
+		/// Control ChkColor.
+		/// </summary>
+		/// <remarks>
+		/// Campo generado automáticamente.
+		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.CheckBox ChkColor;
+
+		/// <summary>
 		/// Control BtnGuardar.
 		/// </summary>
 		/// <remarks>

@@ -350,7 +350,7 @@ namespace GuerreroWeb
 
 		protected void LbInvArticulos_Command(object sender, CommandEventArgs e)
 		{
-			Response.Redirect(Ruta2);
+			Response.Redirect(Ruta1 + "/Views/Inventarios/Articulos.aspx");
 		}
 
 		protected void LbInvLineas_Command(object sender, CommandEventArgs e)
@@ -382,12 +382,12 @@ namespace GuerreroWeb
 
 		protected void LbInvTal_Command(object sender, CommandEventArgs e)
 		{
-			Response.Redirect(Ruta2);
+			Response.Redirect(Ruta1 + "/Views/Inventarios/Tallas.aspx");
 		}
 
 		protected void LbInvUni_Command(object sender, CommandEventArgs e)
 		{
-			Response.Redirect(Ruta2);
+			Response.Redirect(Ruta1 + "/Views/Inventarios/Unidad.aspx");
 		}
 
 		protected void LbVentasPed_Command(object sender, CommandEventArgs e)
